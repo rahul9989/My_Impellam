@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- jquery ui -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	    <!-- CSS Link -->
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	    <link rel="stylesheet" href="assets/css/dataTables.bootstrap.min.css">
+	    <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
+	    <link rel="stylesheet" href="assets/css/responsive.bootstrap.min.css">
+	    <link rel="stylesheet" href="assets/css/main.css">
+
+		<title>Impellam Project</title>
+	</head>
+	<body>
+		
+		
+		<div class="container-fluid">
+
+			<nav class="headeNav">
+				<div class="visible-xs mobile-nav">
+					<img src="assets/img/mobile-nav.png" alt="Mobile Icon" title="Click to slide">
+				</div>
+				<a href="#" class="logo" title="BlueArrow">
+					<img src="assets/img/impellam-logo-blue.png" alt="Impellam Logo" Title="Impellam">
+				</a>
+
+				<ul class="headeNav__right">
+			        <li>
+			          <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			          	<span class="hidden-xs hidden-sm">Andrew Cole</span> 
+			          	<img src="assets/img/user.png" alt="User"> 
+			          	<span class="caret"></span></a>
+			          	<ul class="dropdown-menu">
+			            	<li><a href="#" title="My Profile">My Profile</a></li>
+			            	<li><a href="#" title="Notification 13">Notification 13</a></li>
+			            	<li><a href="#" title="Setting">Setting</a></li>
+			            	<li><a href="#" title="Logout">Logout</a></li>
+			          	</ul>
+			        </li>
+		      	</ul>
+		      	<div class="col-sm-4 col-md-3 headeNav__selectpicker">
+					<select class="selectpicker">
+						<option>Alison Main Site, London</option>
+						<option>Candidate 1</option>
+						<option>Candidate 2</option>
+						<option>Candidate 3</option>
+						<option>Candidate 4</option>
+					</select>
+				</div>
+				<ul class="headeNav__notification">
+			        <li>
+			          <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			          	<img src="assets/img/notify-icon.png" alt="Notification Icon"> 
+		      			<span class="badge">2</span></a>
+			          	<ul class="dropdown-menu">
+			            	<li><a href="#" title="My Profile">My Profile</a></li>
+			            	<li><a href="#" title="Notification 13">Notification 13</a></li>
+			          	</ul>
+			        </li>
+		      	</ul>
+		      	<span class="headeNav__search">
+		      		<input type="search" name="Search" placeholder="Search">
+		      		<img src="assets/img/search-icon.png" alt="Search Icon">
+
+		      	</span>
+			</nav>
+			<div class="timesheet-section">
+				
+				<ul class="dashboard-section__leftNav">
+					<li class="dashboard-section__leftNav--dashboard">
+						<a href="#" title="Dashboard">Dashboard</a>
+					</li>
+					<li class="dashboard-section__leftNav--timesheets"> 
+						<a href="#" title="Timesheets">Timesheets</a> 
+						<ul> 
+							<li>
+								<a href="#" title="Approve Timesheets">Approve Timesheets</a>
+							</li> 
+							<li>
+								<a href="#" title="Shifts to be Approved">Shifts to be Approved</a>
+							</li> 
+						</ul> 
+					</li>
+					<li class="dashboard-section__leftNav--vacancies">
+						<a href="#" title="Current Vacancies">Current Vacancies</a>
+					</li>
+					<li class="dashboard-section__leftNav--temp active">
+						<a href="#" title="My Temp">My Temp</a>
+					</li>
+					<li class="dashboard-section__leftNav--contact">
+						<a href="#" title="Contact Us">Contact Us</a>
+					</li>
+				</ul>
+
+				<div class="timesheet-section__right-part">
+					<ol class="breadcrumb">
+						<li><a href="#" title="Dashboard">Dashboard</a></li>
+						<li><a href="#" title="Dashboard">My Temps</a></li>
+						<li class="active">Past Temps</li>
+					</ol>
+					<div class="search-section">
+						<form class="row">
+							<div class="col-sm-6 col-md-5 col-lg-4">
+								<label class="global-label">Candidate Name</label>
+								<select class="selectpicker">
+									<option>Select Candidate Name</option>
+									<option>Candidate 1</option>
+									<option>Candidate 2</option>
+									<option>Candidate 3</option>
+									<option>Candidate 4</option>
+								</select>
+							</div>
+							<div class="col-sm-6 col-md-3 col-lg-2">
+								<label class="global-label">Job Role</label>
+								<select class="selectpicker">
+									<option>Select Job Role</option>
+									<option>Job Role 1</option>
+									<option>Job Role 2</option>
+									<option>Job Role 3</option>
+									<option>Job Role 4</option>
+								</select>
+							</div>
+							<div class="col-sm-6 col-md-4 col-lg-3">
+								<label class="global-label">Time Period</label>
+					    		<input type="text" class="global-input" name="Date" id="timePeriod" placeholder="Select Time Period">
+							</div>
+							
+							<div class="col-sm-6 col-md-4 col-lg-3">
+								<input type="submit" class="search-btn" name="Search" value="Search">
+								<input type="reset" class="clearAll-btn" name="Clear" value="Clear All">
+							</div>
+						</form>
+						<!-- calendar starts -->
+                        <section class="calendar-pop">
+                            <div class="calendar">
+                                <div class="control-bar">
+                                    <ul>
+                                        <li id="today"><a href="">Today</a></li>
+                                        <li id="yesterday"><a href="">Yesterday</a></li>
+                                        <li id="lastweek"><a href="">Last 7 days</a></li>
+                                        <li id="lastmonth"><a href="">Last 30 days</a></li>
+                                        <li id="lasttwomonth"><a href="">Last 60 days</a></li>
+                                    </ul>
+                                </div>
+                                <div id="datepicker"></div>
+                            </div>
+                        </section>
+                        <!-- calendar ends -->
+					</div>
+					<div class="searchDetail-section">
+						<table class="searchDetail_table book-temp-table">
+							<thead>
+								<tr>
+									<th>Candidate Name</th>
+									<th>Job Role</th>
+									<th>Start Date</th>
+									<th>End Date</th>
+									<th>Start Time</th>
+									<th>End Time</th>
+									<th>Rating</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Patricia Staples</td>
+									<td>Manager</td>
+									<td>1/03/2019</td>
+									<td>1/03/2019</td>
+									<td>14:30</td>
+									<td>14:30</td>
+									<td>
+										<div class="rating">
+											<span class="glyphicon glyphicon-star active"></span>
+											<span class="glyphicon glyphicon-star active"></span>
+											<span class="glyphicon glyphicon-star active"></span>
+											<span class="glyphicon glyphicon-star active"></span>
+											<span class="glyphicon glyphicon-star active"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Patricia Staples</td>
+									<td>Manager</td>
+									<td>1/03/2019</td>
+									<td>1/03/2019</td>
+									<td>14:30</td>
+									<td>14:30</td>
+									<td>
+										<div class="rating">
+											<span class="glyphicon glyphicon-star active"></span>
+											<span class="glyphicon glyphicon-star active"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Patricia Staples</td>
+									<td>Manager</td>
+									<td>1/03/2019</td>
+									<td>1/03/2019</td>
+									<td>14:30</td>
+									<td>14:30</td>
+									<td>
+										<div class="rating">
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Patricia Staples</td>
+									<td>Manager</td>
+									<td>1/03/2019</td>
+									<td>1/03/2019</td>
+									<td>14:30</td>
+									<td>14:30</td>
+									<td>
+										<div class="rating">
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Patricia Staples</td>
+									<td>Manager</td>
+									<td>1/03/2019</td>
+									<td>1/03/2019</td>
+									<td>14:30</td>
+									<td>14:30</td>
+									<td>
+										<div class="rating">
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Patricia Staples</td>
+									<td>Manager</td>
+									<td>1/03/2019</td>
+									<td>1/03/2019</td>
+									<td>14:30</td>
+									<td>14:30</td>
+									<td>
+										<div class="rating">
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>Patricia Staples</td>
+									<td>Manager</td>
+									<td>1/03/2019</td>
+									<td>1/03/2019</td>
+									<td>14:30</td>
+									<td>14:30</td>
+									<td>
+										<div class="rating">
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<footer>
+						<div class="row">
+							<div class="col-sm-6"><p> &copy; Blue Arrow, All rights reserved 2018.</p></div>
+							<div class="col-sm-6"><p>Regd Address:  800 The Boulevard, Capability Green, Luton, Bedfordshire, LU1 3BA. Company No. 00641659</p></div>
+						</div>
+					</footer>
+				</div>
+
+			</div>
+		</div>
+		<div class="sidenav-overlay"></div>
+		<div class="search-overlay"></div>
+
+		<!-- JavaScript Link -->
+		<script src="assets/js/main.min.js"></script>
+		<script src="assets/js/custom.js"></script>
+		
+	</body>
+</html>

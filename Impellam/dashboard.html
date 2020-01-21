@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- CSS Link -->
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	    <link rel="stylesheet" href="assets/css/main.css">
+
+	    <!-- Shift Approval and INVOICE DETAILS Chart CSS -->
+	    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+
+		<title>Impellam Project</title>
+	</head>
+	<body>
+		
+		<div class="container-fluid">
+			<!-- My Temp Popup -->
+			<div class="custom-model modal fade" id="myTemp-popup" tabindex="-1" role="dialog" aria-labelledby="myTemp-popup">
+			  	<div class="modal-dialog" role="document">
+			    	<div class="modal-content">
+			    		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			    		<h1>My Temps</h1>
+			      		<div class="ElementDetail__table">
+							<table>
+								<thead>
+									<tr>
+										<th>Booked Temps</th>
+										<th>Job Role</th>
+										<th>Check-in Time</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td data-th="Booked Temps"><a href="#"  class="nonavlUser" title="Mr. Logan Staples"> Mr. Logan Staples</a></td>
+										<td data-th="Job Role">Sr. Manager</td>
+										<td data-th="Check-in Time">-</td>
+									</tr>
+									<tr>
+										<td data-th="Booked Temps"><a href="#" class="avlUser" title="Ms. Isabelle Staples"> Ms. Isabelle Staples</a></td>
+										<td data-th="Job Role">Sr. Manager</td>
+										<td data-th="Check-in Time">09:30</td>
+									</tr>
+									<tr>
+										<td data-th="Booked Temps"><a href="#" class="avlUser" title="Mr. Jackson Staples"> Mr. Jackson Staples </a></td>
+										<td data-th="Job Role">Sr. Manager</td>
+										<td data-th="Check-in Time">09:30</td>
+									</tr>
+									<tr>
+										<td data-th="Booked Temps"><a href="#" class="avlUser" title="Ms. Victoria Staples"> Ms. Victoria Staples</a></td>
+										<td data-th="Job Role">Sr. Manager</td>
+										<td data-th="Check-in Time">09:30</td>
+									</tr>
+									<tr>
+										<td data-th="Booked Temps"><a href="#" class="nonavlUser" title="Mr. Logan Staples"> Mr. Logan Staples</a></td>
+										<td data-th="Job Role">Sr. Manager</td>
+										<td data-th="Check-in Time">-</td>
+									</tr>
+									<tr>
+										<td data-th="Booked Temps"><a href="#" class="avlUser" title="Ms. Isabelle Staples"> Ms. Isabelle Staples</a></td>
+										<td data-th="Job Role">Sr. Manager</td>
+										<td data-th="Check-in Time">09:30</td>
+									</tr>
+									<tr>
+										<td data-th="Booked Temps"><a href="#" class="avlUser" title="Mr. Jackson Staples"> Mr. Jackson Staples </a></td>
+										<td data-th="Job Role">Sr. Manager</td>
+										<td data-th="Check-in Time">09:30</td>
+									</tr>
+									<tr>
+										<td data-th="Booked Temps"><a href="#" class="avlUser" title="Ms. Victoria Staples"> Ms. Victoria Staples</a></td>
+										<td data-th="Job Role">Sr. Manager</td>
+										<td data-th="Check-in Time">09:30</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+			    	</div>
+			  	</div>
+			</div>
+
+			<!-- booked Temp Popup -->
+			<div class="custom-model modal fade" id="bookedTemp-popup" tabindex="-1" role="dialog" aria-labelledby="bookedTemp-popup">
+			  	<div class="modal-dialog" role="document">
+			    	<div class="modal-content">
+			    		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			    		<h1>Skills</h1>
+			    		<h3>Mr. Logan Staples</h3>
+			      		<div class="ElementDetail__table">
+							<table>
+								<thead>
+									<tr>
+										<th>Competency Type</th>
+										<th>Valid From</th>
+										<th>Valid To</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td data-th="Competency Type">Mr. Logan Staples</td>
+										<td data-th="Valid From">01/03/2019</td>
+										<td data-th="Valid To">05/03/2019</td>
+									</tr>
+									<tr>
+										<td data-th="Competency Type">Mr. Logan Staples</td>
+										<td data-th="Valid From">01/03/2019</td>
+										<td data-th="Valid To">05/03/2019</td>
+									</tr>
+									<tr>
+										<td data-th="Competency Type">Mr. Logan Staples</td>
+										<td data-th="Valid From">01/03/2019</td>
+										<td data-th="Valid To">05/03/2019</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+			    	</div>
+			  	</div>
+			</div>
+
+			<nav class="headeNav">
+				<div class="visible-xs mobile-nav">
+					<img src="assets/img/mobile-nav.png" alt="Mobile Icon" title="Click to slide">
+				</div>
+				<a href="#" class="logo" title="BlueArrow">
+					<img src="assets/img/impellam-logo-blue.png" alt="Impellam Logo" Title="Impellam">
+				</a>
+
+				<ul class="headeNav__right">
+			        <li>
+			          <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			          	<span class="hidden-xs hidden-sm">Andrew Cole</span> 
+			          	<img src="assets/img/user.png" alt="User"> 
+			          	<span class="caret"></span></a>
+			          	<ul class="dropdown-menu">
+			            	<li><a href="#" title="My Profile">My Profile</a></li>
+			            	<li><a href="#" title="Notification 13">Notification 13</a></li>
+			            	<li><a href="#" title="Setting">Setting</a></li>
+			            	<li><a href="#" title="Logout">Logout</a></li>
+			          	</ul>
+			        </li>
+		      	</ul>
+		      	<div class="col-sm-4 col-md-3 headeNav__selectpicker">
+					<select class="selectpicker">
+						<option>Alison Main Site, London</option>
+						<option>Candidate 1</option>
+						<option>Candidate 2</option>
+						<option>Candidate 3</option>
+						<option>Candidate 4</option>
+					</select>
+				</div>
+				<ul class="headeNav__notification">
+			        <li>
+			          <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			          	<img src="assets/img/notify-icon.png" alt="Notification Icon"> 
+		      			<span class="badge">2</span></a>
+			          	<ul class="dropdown-menu">
+			            	<li><a href="#" title="My Profile">My Profile</a></li>
+			            	<li><a href="#" title="Notification 13">Notification 13</a></li>
+			          	</ul>
+			        </li>
+		      	</ul>
+		      	<span class="headeNav__search">
+		      		<input type="search" name="Search" placeholder="Search">
+		      		<img src="assets/img/search-icon.png" alt="Search Icon">
+
+		      	</span>
+			</nav>
+			<div class="dashboard-section container-fluid">
+				
+				<ul class="dashboard-section__leftNav">
+					<li class="dashboard-section__leftNav--dashboard active">
+						<a href="#" title="Dashboard">Dashboard</a>
+					</li>
+					<li class="dashboard-section__leftNav--timesheets"> 
+						<a href="#" title="Timesheets">Timesheets</a> 
+						<ul> 
+							<li>
+								<a href="#" title="Approve Timesheets">Approve Timesheets</a>
+							</li> 
+							<li>
+								<a href="#" title="Shifts to be Approved">Shifts to be Approved</a>
+							</li> 
+							<li>
+								<a href="#" title="Shifts to be Approved">Shifts (Candidate View)</a>
+							</li>
+						</ul> 
+					</li>
+					<li class="dashboard-section__leftNav--vacancies">
+						<a href="#" title="Current Vacancies">Current Vacancies</a>
+					</li>
+					<li class="dashboard-section__leftNav--temp">
+						<a href="#" title="My Temp">My Temp</a>
+					</li>
+					<li class="dashboard-section__leftNav--contact">
+						<a href="#" title="Contact Us">Contact Us</a>
+					</li>
+				</ul>
+
+				<div class="dashboard-section__right-part row">
+					<div class="col-sm-12 col-xs-12">
+						<form class="headeNav__selectpicker">
+							<select class="selectpicker">
+								<option>Add your widget</option>
+								<option>Shift Approval</option>
+								<option>My Blue arrow contact</option>
+								<option>My Temps</option>
+								<option>BOOKED Temps</option>
+							</select>
+						</form>
+					</div>
+
+					<div class="col-sm-12 col-xs-12 col-md-6">
+						<div class=" dashboard-section__right-part--singleElement">
+							<h2>Shift Approval</h2>
+							<p>Details of shifts awaiting your input</p>
+							<span class="modify-icon"><i class="fas fa-ellipsis-v"></i></span>
+							<div class="modify-block">
+								<span class="modify-block__close"></span>
+								<ul class="modify-block__edit-block">
+									<li class="modify-block__edit-block--edit">Edit</li>
+									<li class="modify-block__edit-block--delete">Delete</li>
+								</ul>
+							</div>
+							
+							<div class="ElementDetail">
+								<div class="ElementDetail__pic-section">
+									<div class="ElementDetail__pic-section--chart">
+										<!-- It's a dummy Image -->
+										<div id="circleChart"></div>
+									</div>
+								</div>
+								<div class="ElementDetail__content-section">
+									<div class="ElementDetail__table ElementDetail__table2">
+										<table>
+											<tbody>
+												<tr>
+													<td><a href="#" class="nonavlUser" title="Shifts Requiring Approval"> Shifts Requiring Approval</a></td>
+													<td>20</td>
+												</tr>
+												<tr>
+													<td><a href="#" class="avlUser" title="Shifts Approved"> Shifts Approved</a></td>
+													<td>40</td>
+												</tr>
+												<tr>
+													<td><a href="#" class="constUser" title="Total Shifts"> Total Shifts</a></td>
+													<td>60</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<button type="submit" class="query-btn">View All</button>
+						</div>
+					</div>
+
+					<div class="col-sm-12 col-xs-12 col-md-6">
+						<div class="dashboard-section__right-part--singleElement">
+							<h2>My Blue arrow contact</h2>
+							<span class="modify-icon"><i class="fas fa-ellipsis-v"></i></span>
+							<div class="modify-block">
+								<span class="modify-block__close"></span>
+								<ul class="modify-block__edit-block">
+									<li class="modify-block__edit-block--edit">Edit</li>
+									<li class="modify-block__edit-block--delete">Delete</li>
+								</ul>
+							</div>
+							
+							<div class="ElementDetail">
+								<div class="ElementDetail__pic-section">
+									<div class="ElementDetail__pic-section--chart">
+										<p><strong>Branch Name</strong> Alison, Louton</p>
+									</div>
+								</div>
+								<div class="ElementDetail__content-section">
+									<div class="address-block">
+										<div class="address-name">
+											<p>Ms. Elizabeth Adam</p>
+											<label>Consultant</label>
+										</div>
+										<label>Email:</label>
+										<p class="address">louton@bluearrow.co.uk</p>
+										<label>Phone:</label>
+										<p class="address">+44 0800 2099 876</p>
+										<label>Address:</label>
+										<p class="address">Louton, L1 SUI, United Kingdom</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-12 col-xs-12 col-md-6">
+						<div class="dashboard-section__right-part--singleElement">
+							<h2>My Temps</h2>
+							<p>Temps that are scheduled to be on site today</p>
+							<span class="modify-icon"><i class="fas fa-ellipsis-v"></i></span>
+							<div class="modify-block">
+								<span class="modify-block__close"></span>
+								<ul class="modify-block__edit-block">
+									<li class="modify-block__edit-block--edit">Edit</li>
+									<li class="modify-block__edit-block--delete">Delete</li>
+								</ul>
+							</div>
+							
+							<div class="ElementDetail">
+								<div class="ElementDetail__pic-section">
+									<div class="ElementDetail__pic-section--chart">
+										<!-- It's a dummy Image -->
+										<div id="demo-pie-1" class="pie-title-center" data-percent="10"> 
+											<span class="pie-value"></span>
+											<p>Non Available Users</p>
+										</div>
+      									<div id="demo-pie-2" class="pie-title-center" data-percent="30"> 
+      										<span class="pie-value"></span>
+      										<p>Available Users</p>
+      									</div>
+									</div>
+								</div>
+								<div class="ElementDetail__content-section">
+									<div class="ElementDetail__table">
+										<table>
+											<thead>
+												<tr>
+													<th>Booked Temps</th>
+													<th>Check-in Time</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td data-th="Booked Temps"><a href="#" class="nonavlUser" title="Mr. Logan Staples"> Mr. Logan Staples</a></td>
+													<td data-th="Check-in Time">-</td>
+												</tr>
+												<tr>
+													<td data-th="Booked Temps"><a href="#" class="avlUser" title="Mr. Logan Staples"> Ms. Isabelle Staples</a></td>
+													<td data-th="Check-in Time">09:30</td>
+												</tr>
+												<tr>
+													<td data-th="Booked Temps"><a href="#" class="avlUser" title="Mr. Logan Staples"> Mr. Jackson Staples </a></td>
+													<td data-th="Check-in Time">09:30</td>
+												</tr>
+												<tr>
+													<td data-th="Booked Temps"><a href="#" class="avlUser" title="Mr. Logan Staples"> Ms. Victoria Staples</a></td>
+													<td data-th="Check-in Time">09:30</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<button type="submit" class="query-btn" data-toggle="modal" data-target="#myTemp-popup">View All</button>
+						</div>
+					</div>
+
+					<div class="col-sm-12 col-xs-12 col-md-6">
+						<div class="dashboard-section__right-part--singleElement">
+							<h2>BOOKED Temps</h2>
+							<p>Details on temps booked for future shifts (Click on temp name) </p>
+							<span class="modify-icon"><i class="fas fa-ellipsis-v"></i></span>
+							<div class="modify-block">
+								<span class="modify-block__close"></span>
+								<ul class="modify-block__edit-block">
+									<li class="modify-block__edit-block--edit">Edit</li>
+									<li class="modify-block__edit-block--delete">Delete</li>
+								</ul>
+							</div>
+							
+							<div class="ElementDetail">
+								<div class="ElementDetail__table ElementDetail__table3">
+									<table>
+										<thead>
+											<tr>
+												<th>Temp Name</th>
+												<th>Date</th>
+												<th>Job Role</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td data-th="Temp Name" data-toggle="modal" data-target="#bookedTemp-popup"><a href="#" title="Mr. Logan Staples">Mr. Logan Staples</a></td>
+												<td data-th="Date">01/02/2019</td>
+												<td data-th="Job Role">Warehouse</td>
+											</tr>
+											<tr>
+												<td data-th="Temp Name"><a href="#" title="Ms. Isabelle Staples">Ms. Isabelle Staples</a></td>
+												<td data-th="Date">01/02/2019</td>
+												<td data-th="Job Role">Cheaf</td>
+											</tr>
+											<tr>
+												<td data-th="Temp Name"><a href="#" title="Mr. Jackson Staples">Mr. Jackson Staples </a></td>
+												<td data-th="Date">01/02/2019</td>
+												<td data-th="Job Role">Warehouse</td>
+											</tr>
+											<tr>
+												<td data-th="Temp Name"><a href="#" title="Ms. Victoria Staples">Ms. Victoria Staples</a></td>
+												<td data-th="Date">01/02/2019</td>
+												<td data-th="Job Role">Cheaf</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<button type="submit" class="query-btn">View All</button>
+						</div>
+					</div>
+
+					<div class="col-sm-12 col-xs-12 col-md-6">
+						<div class="dashboard-section__right-part--singleElement">
+							<h2>Invoice Details</h2>
+							<p>See your latest invoices from Blue Arrow</p>
+							<span class="modify-icon"><i class="fas fa-ellipsis-v"></i></span>
+							<div class="modify-block">
+								<span class="modify-block__close"></span>
+								<ul class="modify-block__edit-block">
+									<li class="modify-block__edit-block--edit">Edit</li>
+									<li class="modify-block__edit-block--delete">Delete</li>
+								</ul>
+							</div>
+							<div class="ElementDetail">
+								<div class="ElementDetail__pic-section">
+									<div class="ElementDetail__pic-section--chart">
+										<!-- It's a dummy Image -->
+										<canvas id="myChart" style="height: 300px; width: 100%; max-width: 300px;"></canvas>
+									</div>
+								</div>
+								<div class="ElementDetail__content-section">
+									<h3>Month</h3>
+									<ul class="month-with-PDF">
+										<li>January <span><img src="assets/img/pdf-icon.png" alt="PDF Icon"></span></li>
+										<li>February <span><img src="assets/img/pdf-icon.png" alt="PDF Icon"></span></li>
+										<li>March <span><img src="assets/img/pdf-icon.png" alt="PDF Icon"></span></li>
+										<li>April <span><img src="assets/img/pdf-icon.png" alt="PDF Icon"></span></li>
+									</ul>
+								</div>
+							</div>
+							
+							<button type="submit" class="query-btn">View All</button>
+						</div>
+					</div>
+
+					<div class="col-sm-12 col-xs-12 col-md-6">
+						<div class="dashboard-section__right-part--singleElement">
+							<h2>Temp Hours</h2>
+							<p>Hours worked by Blue Arrow Temps per week</p>
+							<span class="modify-icon"><i class="fas fa-ellipsis-v"></i></span>
+							<div class="modify-block">
+								<span class="modify-block__close"></span>
+								<ul class="modify-block__edit-block">
+									<li class="modify-block__edit-block--edit">Edit</li>
+									<li class="modify-block__edit-block--delete">Delete</li>
+								</ul>
+							</div>
+							
+							<div class="ElementDetail">
+								<div class="ElementDetail__pic-section">
+									<div class="ElementDetail__pic-section--chart">
+										<!-- It's a dummy Image -->
+										<div id="chartContainer">
+										    <span class="chartContainer__span"></span>
+										</div>
+									</div>
+								</div>
+								<div class="ElementDetail__content-section">
+									<h3>Active Vacancy</h3>
+									<ul>
+										<li>Analyst Specialist at BlackRock Services <span>India Pvt.Ltd</span></li>
+										<li>Senior IT Operations Specialist, Self - Employed, <span>Hampstead </span></li>
+										<li>Urgent requirement for windows administrator <span>Smart Tech Info Systems</span></li>
+										<li>SCCM & Active Directory System <span>Crystal Solutions Limited</span></li>
+									</ul>
+								</div>
+							</div>
+							<button type="submit" class="query-btn">View All</button>
+						</div>
+					</div>
+
+					<div class="col-sm-12 col-xs-12 col-md-12">
+						<footer>
+							<div class="row">
+								<div class="col-sm-6"><p> &copy; Blue Arrow, All rights reserved 2018.</p></div>
+								<div class="col-sm-6"><p>Regd Address:  800 The Boulevard, Capability Green, Luton, Bedfordshire, LU1 3BA. Company No. 00641659</p></div>
+							</div>
+						</footer>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="sidenav-overlay"></div>
+		<div class="search-overlay"></div>
+
+		<!-- JavaScript Link -->
+		<script src="assets/js/main.min.js"></script>
+
+		<!-- Shift Approval and INVOICE DETAILS Chart Script -->
+		<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+		<script src="https://www.amcharts.com/lib/3/gauge.js"></script>
+		<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+		<script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+		<!-- TEMP HOURS Chart Script -->
+		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+		<!-- my temps Chart Script -->
+		<script src="assets/js/pie-chart.js" type="text/javascript"></script>
+		<!-- Custom JavaScript -->
+		<script src="assets/js/custom.js"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- jquery ui -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	    <!-- CSS Link -->
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	    <link rel="stylesheet" href="assets/css/dataTables.bootstrap.min.css">
+	    <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
+	    <link rel="stylesheet" href="assets/css/responsive.bootstrap.min.css">
+	    <link rel="stylesheet" href="assets/css/main.css">
+
+		<title>Impellam Project</title>
+	</head>
+	<body>
+		
+		
+		<div class="container-fluid">
+
+			<nav class="headeNav">
+				<div class="visible-xs mobile-nav">
+					<img src="assets/img/mobile-nav.png" alt="Mobile Icon" title="Click to slide">
+				</div>
+				<a href="#" class="logo" title="BlueArrow">
+					<img src="assets/img/impellam-logo-blue.png" alt="Impellam Logo" Title="Impellam">
+				</a>
+
+				<ul class="headeNav__right">
+			        <li>
+			          <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			          	<span class="hidden-xs hidden-sm">Andrew Cole</span> 
+			          	<img src="assets/img/user.png" alt="User"> 
+			          	<span class="caret"></span></a>
+			          	<ul class="dropdown-menu">
+			            	<li><a href="#" title="My Profile">My Profile</a></li>
+			            	<li><a href="#" title="Notification 13">Notification 13</a></li>
+			            	<li><a href="#" title="Setting">Setting</a></li>
+			            	<li><a href="#" title="Logout">Logout</a></li>
+			          	</ul>
+			        </li>
+		      	</ul>
+		      	<div class="col-sm-4 col-md-3 headeNav__selectpicker">
+					<select class="selectpicker">
+						<option>Alison Main Site, London</option>
+						<option>Candidate 1</option>
+						<option>Candidate 2</option>
+						<option>Candidate 3</option>
+						<option>Candidate 4</option>
+					</select>
+				</div>
+				<ul class="headeNav__notification">
+			        <li>
+			          <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			          	<img src="assets/img/notify-icon.png" alt="Notification Icon"> 
+		      			<span class="badge">2</span></a>
+			          	<ul class="dropdown-menu">
+			            	<li><a href="#" title="My Profile">My Profile</a></li>
+			            	<li><a href="#" title="Notification 13">Notification 13</a></li>
+			          	</ul>
+			        </li>
+		      	</ul>
+		      	<span class="headeNav__search">
+		      		<input type="search" name="Search" placeholder="Search">
+		      		<img src="assets/img/search-icon.png" alt="Search Icon">
+
+		      	</span>
+			</nav>
+			<div class="timesheet-section">
+				
+				<ul class="dashboard-section__leftNav">
+					<li class="dashboard-section__leftNav--dashboard">
+						<a href="#" title="Dashboard">Dashboard</a>
+					</li>
+					<li class="dashboard-section__leftNav--timesheets"> 
+						<a href="#" title="Timesheets">Timesheets</a> 
+						<ul> 
+							<li>
+								<a href="#" title="Approve Timesheets">Approve Timesheets</a>
+							</li> 
+							<li>
+								<a href="#" title="Shifts to be Approved">Shifts to be Approved</a>
+							</li> 
+						</ul> 
+					</li>
+					<li class="dashboard-section__leftNav--vacancies">
+						<a href="#" title="Current Vacancies">Current Vacancies</a>
+					</li>
+					<li class="dashboard-section__leftNav--temp">
+						<a href="#" title="My Temp">My Temp</a>
+					</li>
+					<li class="dashboard-section__leftNav--contact">
+						<a href="#" title="Contact Us">Contact Us</a>
+					</li>
+				</ul>
+
+				<div class="timesheet-section__right-part">
+					<ol class="breadcrumb">
+						<li><a href="#" title="Dashboard">Dashboard</a></li>
+						<li class="active">Site Management</li>
+					</ol>
+					<div class="search-section vacancies-section">
+						<div class="address-details">
+							<form class="row">
+								<div class="col-sm-12">
+									<h2>Address:</h2>
+								</div>
+								<div class="col-sm-12">
+									<label class="global-label">Address</label>
+									<input type="text" class="global-input" name="Date" placeholder="Full Name">
+								</div>
+								<div class="col-sm-12">
+									<label class="global-label">City</label>
+									<select class="selectpicker">
+										<option>Choose your City</option>
+										<option>City 1</option>
+										<option>City 2</option>
+										<option>City 3</option>
+										<option>City 4</option>
+									</select>
+								</div>
+								<div class="col-sm-12">
+									<label class="global-label">State</label>
+									<select class="selectpicker">
+										<option>Choose your state</option>
+										<option>state 1</option>
+										<option>state 2</option>
+										<option>state 3</option>
+										<option>state 4</option>
+									</select>
+								</div>
+								<div class="col-sm-12">
+									<label class="global-label">Postcode</label>
+									<input type="text" class="global-input" name="Date" placeholder="Postcode">
+								</div>
+								<div class="col-sm-12">
+									<hr>
+								</div>
+								<div class="col-sm-12">
+									<h2>Main Contact:</h2>
+								</div>
+								<div class="col-sm-6">
+									<label class="global-label">Name</label>
+									<input type="text" class="global-input" name="Date" placeholder="Name">
+								</div>
+								<div class="col-sm-6">
+									<label class="global-label">Email</label>
+									<input type="email" class="global-input" name="Date" placeholder="Email">
+								</div>
+								<div class="col-sm-12">
+									<hr>
+								</div>
+								<div class="col-sm-12">
+									<h2>Secondary Approver:</h2>
+								</div>
+								<div class="col-sm-6">
+									<label class="global-label">Name</label>
+									<input type="text" class="global-input" name="Date" placeholder="Name">
+								</div>
+								<div class="col-sm-6">
+									<label class="global-label">Email</label>
+									<input type="email" class="global-input" name="Date" placeholder="Email">
+								</div>
+								<div class="col-sm-12">
+									<hr>
+								</div>
+								<div class="col-sm-12">
+									<h2>Escalation Contact:</h2>
+								</div>
+								<div class="col-sm-6">
+									<label class="global-label">Name</label>
+									<input type="text" class="global-input" name="Date" placeholder="Name">
+								</div>
+								<div class="col-sm-6">
+									<label class="global-label">Email</label>
+									<input type="email" class="global-input" name="Date" placeholder="Email">
+								</div>
+								<div class="col-sm-12">
+									<hr>
+								</div>
+								<div class="col-sm-12 text-right">
+									<button type="submit" class="action-button accept">Submit</button>
+				      				<button type="reset" class="action-button decline">Clear</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<footer>
+						<div class="row">
+							<div class="col-sm-6"><p> &copy; Blue Arrow, All rights reserved 2018.</p></div>
+							<div class="col-sm-6"><p>Regd Address:  800 The Boulevard, Capability Green, Luton, Bedfordshire, LU1 3BA. Company No. 00641659</p></div>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+		<div class="sidenav-overlay"></div>
+		<div class="search-overlay"></div>
+
+		<!-- JavaScript Link -->
+		<script src="assets/js/main.min.js"></script>
+		<script src="assets/js/custom.js"></script>
+		
+	</body>
+</html>

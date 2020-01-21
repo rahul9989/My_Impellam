@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- jquery ui -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	    <!-- CSS Link -->
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	    <link rel="stylesheet" href="assets/css/dataTables.bootstrap.min.css">
+	    <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
+	    <link rel="stylesheet" href="assets/css/responsive.bootstrap.min.css">
+	    <link rel="stylesheet" href="assets/css/main.css">
+
+		<title>Impellam Project</title>
+	</head>
+	<body>
+		
+		
+		<div class="container-fluid">
+			
+			<nav class="headeNav">
+				<div class="visible-xs mobile-nav">
+					<img src="assets/img/mobile-nav.png" alt="Mobile Icon" title="Click to slide">
+				</div>
+				<a href="#" class="logo" title="BlueArrow">
+					<img src="assets/img/impellam-logo-blue.png" alt="Impellam Logo" Title="Impellam">
+				</a>
+
+				<ul class="headeNav__right">
+			        <li>
+			          <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			          	<span class="hidden-xs hidden-sm">Andrew Cole</span> 
+			          	<img src="assets/img/user.png" alt="User"> 
+			          	<span class="caret"></span></a>
+			          	<ul class="dropdown-menu">
+			            	<li><a href="#" title="My Profile">My Profile</a></li>
+			            	<li><a href="#" title="Notification 13">Notification 13</a></li>
+			            	<li><a href="#" title="Setting">Setting</a></li>
+			            	<li><a href="#" title="Logout">Logout</a></li>
+			          	</ul>
+			        </li>
+		      	</ul>
+		      	<div class="col-sm-4 col-md-3 headeNav__selectpicker">
+					<select class="selectpicker">
+						<option>Alison Main Site, London</option>
+						<option>Candidate 1</option>
+						<option>Candidate 2</option>
+						<option>Candidate 3</option>
+						<option>Candidate 4</option>
+					</select>
+				</div>
+				<ul class="headeNav__notification">
+			        <li>
+			          <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			          	<img src="assets/img/notify-icon.png" alt="Notification Icon"> 
+		      			<span class="badge">2</span></a>
+			          	<ul class="dropdown-menu">
+			            	<li><a href="#" title="My Profile">My Profile</a></li>
+			            	<li><a href="#" title="Notification 13">Notification 13</a></li>
+			          	</ul>
+			        </li>
+		      	</ul>
+		      	<span class="headeNav__search">
+		      		<input type="search" name="Search" placeholder="Search">
+		      		<img src="assets/img/search-icon.png" alt="Search Icon">
+
+		      	</span>
+			</nav>
+			<div class="timesheet-section">
+				
+				<ul class="dashboard-section__leftNav">
+					<li class="dashboard-section__leftNav--dashboard">
+						<a href="#" title="Dashboard">Dashboard</a>
+					</li>
+					<li class="dashboard-section__leftNav--timesheets active"> 
+						<a href="#" title="Timesheets">Timesheets</a> 
+						<ul> 
+							<li>
+								<a href="#" title="Approve Timesheets">Approve Timesheets</a>
+							</li> 
+							<li>
+								<a href="#" title="Shifts to be Approved">Shifts to be Approved</a>
+							</li> 
+						</ul> 
+					</li>
+					<li class="dashboard-section__leftNav--vacancies">
+						<a href="#" title="Current Vacancies">Current Vacancies</a>
+					</li>
+					<li class="dashboard-section__leftNav--temp">
+						<a href="#" title="My Temp">My Temp</a>
+					</li>
+					<li class="dashboard-section__leftNav--contact">
+						<a href="#" title="Contact Us">Contact Us</a>
+					</li>
+				</ul>
+
+				<div class="timesheet-section__right-part">
+					<ol class="breadcrumb">
+						<li><a href="#" title="Dashboard">Dashboard</a></li>
+						<li><a href="#" title="Dashboard">Timesheets</a></li>
+						<li class="active">Shifts (Candidate View)</li>
+					</ol>
+					<div class="search-section">
+						<form class="row">
+							<div class="col-sm-12 col-md-6 col-lg-9">
+								<label class="global-label">Candidate Name</label>
+								<input type="text" class="global-input" name="Date" placeholder="Search Candidate Name">
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-3">
+								<input type="submit" class="search-btn" name="Search" value="Search">
+								<input type="reset" class="clearAll-btn" name="Clear" value="Clear All">
+							</div>
+						</form>
+					</div>
+					<div class="tab-section">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#">Candidate View</a></li>
+							<li role="presentation"><a href="date_view.html">Date View</a></li>
+						</ul>
+
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active">
+								<p class="show-rows text-right">Showing 7 of 57 Candidates</p>
+								<div class="panel-group custom-accordian" id="accordion" role="tablist" aria-multiselectable="true">
+									<div class="panel panel-default">
+										<div class="ElementDetail__table" role="tab">
+											<table>
+												<thead>
+													<tr>
+														<th>Candidate Name</th>
+														<th>Job Role</th>
+														<th>Booked Hours</th>
+														<th>Actual Hours</th>
+														<th>Difference</th>
+														<th>Action</th>
+													</tr>
+												</thead>
+											</table>
+										</div>
+									</div>
+									<div class="panel panel-default panel-accepted">
+										<div class="ElementDetail__table" role="tab" id="headingOne">
+											<table>
+												<body>
+													<tr>
+														<td data-th="Candidate Name"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><span class="glyphicon glyphicon-menu-right"></span> </a>Patricia</td>
+														<td data-th="Job Role"> Manager</td>
+														<td data-th="Booked Hours"> 14:30</td>
+														<td data-th="Job Role"> 14:30</td>
+														<td data-th="Difference"> +00:30</td>
+														<td data-th="Action">
+															<span class="status complete">Approved</span>
+														</td>
+													</tr>
+												</body>
+											</table>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+											<div class="panel-body">
+											<div class="searchDetail-section">
+												<table class="searchDetail_table">
+													<thead>
+														<tr>
+															<th>Start Date</th>
+															<th class="booked-time">Booked Time Start / End</th>
+															<th class="actual-time">Actual Time Start / End</th>
+															<th>Breaks</th>
+															<th>Chargeable Hours</th>
+															<th>Action</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr class="selected-rows">
+															<td>Mon, 04 April</td>
+															<td class="time booked-time">
+																<div class="time-block">
+																	<fieldset disabled>
+																		<input type="text" class="form-control time-blockTime" value="14:30">
+																		<hr>
+																		<input type="text" class="form-control time-blockTime" value="15:30">
+																	</fieldset>
+																</div>
+															</td>
+															<td class="time actual-time">
+																<div class="time-block">
+																	<fieldset disabled>
+																		<input type="text" class="form-control time-blockTime" value="14:30">
+																		<hr>
+																		<input type="text" class="form-control time-blockTime" value="15:30">
+																		<span class="time-blockEdit">Edit</span>
+																	</fieldset>
+																</div>
+															</td>
+															<td>00:00</td>
+															<td>14:30</td>
+															<td>
+																<span class="action-button accept">Approve</span>
+																<span class="action-button decline">Reject</span>
+															</td>
+														</tr>
+														<tr>
+															<td>Mon, 04 April</td>
+															<td class="time booked-time">
+																<div class="time-block">
+																	<fieldset disabled>
+																		<input type="text" class="form-control time-blockTime" value="14:30">
+																		<hr>
+																		<input type="text" class="form-control time-blockTime" value="15:30">
+																	</fieldset>
+																</div>
+															</td>
+															<td class="time actual-time">
+																<div class="time-block">
+																	<fieldset disabled>
+																		<input type="text" class="form-control time-blockTime" value="14:30">
+																		<hr>
+																		<input type="text" class="form-control time-blockTime" value="15:30">
+																		<span class="time-blockEdit">Edit</span>
+																	</fieldset>
+																</div>
+															</td>
+															<td>00:00</td>
+															<td>14:30</td>
+															<td>
+																<span class="action-button accept">Approve</span>
+																<span class="action-button decline">Reject</span>
+															</td>
+														</tr>
+														<tr class="selected-rows">
+															<td>Mon, 04 April</td>
+															<td class="time booked-time">
+																<div class="time-block">
+																	<fieldset disabled>
+																		<input type="text" class="form-control time-blockTime" value="14:30">
+																		<hr>
+																		<input type="text" class="form-control time-blockTime" value="15:30">
+																	</fieldset>
+																</div>
+															</td>
+															<td class="time actual-time">
+																<div class="time-block">
+																	<fieldset disabled>
+																		<input type="text" class="form-control time-blockTime" value="14:30">
+																		<hr>
+																		<input type="text" class="form-control time-blockTime" value="15:30">
+																		<span class="time-blockEdit">Edit</span>
+																	</fieldset>
+																</div>
+															</td>
+															<td>00:00</td>
+															<td>14:30</td>
+															<td>
+																<span class="action-button accept">Approve</span>
+																<span class="action-button decline">Reject</span>
+															</td>
+														</tr>
+														<tr>
+															<td>Mon, 04 April</td>
+															<td class="time booked-time">
+																<div class="time-block">
+																	<fieldset disabled>
+																		<input type="text" class="form-control time-blockTime" value="14:30">
+																		<hr>
+																		<input type="text" class="form-control time-blockTime" value="15:30">
+																	</fieldset>
+																</div>
+															</td>
+															<td class="time actual-time">
+																<div class="time-block">
+																	<fieldset disabled>
+																		<input type="text" class="form-control time-blockTime" value="14:30">
+																		<hr>
+																		<input type="text" class="form-control time-blockTime" value="15:30">
+																		<span class="time-blockEdit">Edit</span>
+																	</fieldset>
+																</div>
+															</td>
+															<td>00:00</td>
+															<td>14:30</td>
+															<td>
+																<span class="action-button accept">Approve</span>
+																<span class="action-button decline">Reject</span>
+															</td>
+														</tr>
+														<tr>
+															<td>Mon, 04 April</td>
+															<td class="time booked-time">
+																<div class="time-block">
+																	<fieldset disabled>
+																		<input type="text" class="form-control time-blockTime" value="14:30">
+																		<hr>
+																		<input type="text" class="form-control time-blockTime" value="15:30">
+																	</fieldset>
+																</div>
+															</td>
+															<td class="time actual-time">
+																<div class="time-block">
+																	<fieldset disabled>
+																		<input type="text" class="form-control time-blockTime" value="14:30">
+																		<hr>
+																		<input type="text" class="form-control time-blockTime" value="15:30">
+																		<span class="time-blockEdit">Edit</span>
+																	</fieldset>
+																</div>
+															</td>
+															<td>00:00</td>
+															<td>14:30</td>
+															<td>
+																<span class="action-button accept">Approve</span>
+																<span class="action-button decline">Reject</span>
+															</td>
+														</tr>
+														<tr>
+															<td>Mon, 04 April</td>
+															<td class="time booked-time">
+																<div class="time-block">
+																	<fieldset disabled>
+																		<input type="text" class="form-control time-blockTime" value="14:30">
+																		<hr>
+																		<input type="text" class="form-control time-blockTime" value="15:30">
+																	</fieldset>
+																</div>
+															</td>
+															<td class="time actual-time">
+																<div class="time-block">
+																	<fieldset disabled>
+																		<input type="text" class="form-control time-blockTime" value="14:30">
+																		<hr>
+																		<input type="text" class="form-control time-blockTime" value="15:30">
+																		<span class="time-blockEdit">Edit</span>
+																	</fieldset>
+																</div>
+															</td>
+															<td>00:00</td>
+															<td>14:30</td>
+															<td>
+																<span class="action-button accept">Approve</span>
+																<span class="action-button decline">Reject</span>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="ElementDetail__table" role="tab" id="headingTwo">
+											<table>
+												<body>
+													<tr>
+														<td data-th="Candidate Name"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"><span class="glyphicon glyphicon-menu-right"></span> </a>Patricia</td>
+														<td data-th="Job Role ">Manager</td>
+														<td data-th="Booked Hours ">14:30</td>
+														<td data-th="Job Role ">14:30</td>
+														<td data-th="Difference ">+00:30</td>
+														<td data-th="Action">
+															<span class="action-button accept">Approve</span>
+															<span class="action-button decline">Reject</span>
+														</td>
+													</tr>
+												</body>
+											</table>
+										</div>
+										<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+											<div class="panel-body">
+												<div class="searchDetail-section">
+													<table class="searchDetail_table">
+														<thead>
+															<tr>
+																<th>Start Date</th>
+																<th class="booked-time">Booked Time Start / End</th>
+																<th class="actual-time">Actual Time Start / End</th>
+																<th>Breaks</th>
+																<th>Chargeable Hours</th>
+																<th>Action</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr class="selected-rows">
+																<td>Mon, 04 April</td>
+																<td class="time booked-time">
+																	<div class="time-block">
+																		<fieldset disabled>
+																			<input type="text" class="form-control time-blockTime" value="14:30">
+																			<hr>
+																			<input type="text" class="form-control time-blockTime" value="15:30">
+																		</fieldset>
+																	</div>
+																</td>
+																<td class="time actual-time">
+																	<div class="time-block">
+																		<fieldset disabled>
+																			<input type="text" class="form-control time-blockTime" value="14:30">
+																			<hr>
+																			<input type="text" class="form-control time-blockTime" value="15:30">
+																			<span class="time-blockEdit">Edit</span>
+																		</fieldset>
+																	</div>
+																</td>
+																<td>00:00</td>
+																<td>14:30</td>
+																<td>
+																	<span class="action-button accept">Approve</span>
+																	<span class="action-button decline">Reject</span>
+																</td>
+															</tr>
+															<tr>
+																<td>Mon, 04 April</td>
+																<td class="time booked-time">
+																	<div class="time-block">
+																		<fieldset disabled>
+																			<input type="text" class="form-control time-blockTime" value="14:30">
+																			<hr>
+																			<input type="text" class="form-control time-blockTime" value="15:30">
+																		</fieldset>
+																	</div>
+																</td>
+																<td class="time actual-time">
+																	<div class="time-block">
+																		<fieldset disabled>
+																			<input type="text" class="form-control time-blockTime" value="14:30">
+																			<hr>
+																			<input type="text" class="form-control time-blockTime" value="15:30">
+																			<span class="time-blockEdit">Edit</span>
+																		</fieldset>
+																	</div>
+																</td>
+																<td>00:00</td>
+																<td>14:30</td>
+																<td>
+																	<span class="action-button accept">Approve</span>
+																	<span class="action-button decline">Reject</span>
+																</td>
+															</tr>
+															<tr class="selected-rows">
+																<td>Mon, 04 April</td>
+																<td class="time booked-time">
+																	<div class="time-block">
+																		<fieldset disabled>
+																			<input type="text" class="form-control time-blockTime" value="14:30">
+																			<hr>
+																			<input type="text" class="form-control time-blockTime" value="15:30">
+																		</fieldset>
+																	</div>
+																</td>
+																<td class="time actual-time">
+																	<div class="time-block">
+																		<fieldset disabled>
+																			<input type="text" class="form-control time-blockTime" value="14:30">
+																			<hr>
+																			<input type="text" class="form-control time-blockTime" value="15:30">
+																			<span class="time-blockEdit">Edit</span>
+																		</fieldset>
+																	</div>
+																</td>
+																<td>00:00</td>
+																<td>14:30</td>
+																<td>
+																	<span class="action-button accept">Approve</span>
+																	<span class="action-button decline">Reject</span>
+																</td>
+															</tr>
+															<tr>
+																<td>Mon, 04 April</td>
+																<td class="time booked-time">
+																	<div class="time-block">
+																		<fieldset disabled>
+																			<input type="text" class="form-control time-blockTime" value="14:30">
+																			<hr>
+																			<input type="text" class="form-control time-blockTime" value="15:30">
+																		</fieldset>
+																	</div>
+																</td>
+																<td class="time actual-time">
+																	<div class="time-block">
+																		<fieldset disabled>
+																			<input type="text" class="form-control time-blockTime" value="14:30">
+																			<hr>
+																			<input type="text" class="form-control time-blockTime" value="15:30">
+																			<span class="time-blockEdit">Edit</span>
+																		</fieldset>
+																	</div>
+																</td>
+																<td>00:00</td>
+																<td>14:30</td>
+																<td>
+																	<span class="action-button accept">Approve</span>
+																	<span class="action-button decline">Reject</span>
+																</td>
+															</tr>
+															<tr>
+																<td>Mon, 04 April</td>
+																<td class="time booked-time">
+																	<div class="time-block">
+																		<fieldset disabled>
+																			<input type="text" class="form-control time-blockTime" value="14:30">
+																			<hr>
+																			<input type="text" class="form-control time-blockTime" value="15:30">
+																		</fieldset>
+																	</div>
+																</td>
+																<td class="time actual-time">
+																	<div class="time-block">
+																		<fieldset disabled>
+																			<input type="text" class="form-control time-blockTime" value="14:30">
+																			<hr>
+																			<input type="text" class="form-control time-blockTime" value="15:30">
+																			<span class="time-blockEdit">Edit</span>
+																		</fieldset>
+																	</div>
+																</td>
+																<td>00:00</td>
+																<td>14:30</td>
+																<td>
+																	<span class="action-button accept">Approve</span>
+																	<span class="action-button decline">Reject</span>
+																</td>
+															</tr>
+															<tr>
+																<td>Mon, 04 April</td>
+																<td class="time booked-time">
+																	<div class="time-block">
+																		<fieldset disabled>
+																			<input type="text" class="form-control time-blockTime" value="14:30">
+																			<hr>
+																			<input type="text" class="form-control time-blockTime" value="15:30">
+																		</fieldset>
+																	</div>
+																</td>
+																<td class="time actual-time">
+																	<div class="time-block">
+																		<fieldset disabled>
+																			<input type="text" class="form-control time-blockTime" value="14:30">
+																			<hr>
+																			<input type="text" class="form-control time-blockTime" value="15:30">
+																			<span class="time-blockEdit">Edit</span>
+																		</fieldset>
+																	</div>
+																</td>
+																<td>00:00</td>
+																<td>14:30</td>
+																<td>
+																	<span class="action-button accept">Approve</span>
+																	<span class="action-button decline">Reject</span>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default panel-rejected">
+										<div class="ElementDetail__table" role="tab" id="headingThree">
+											<table>
+												<body>
+													<tr>
+														<td data-th="Candidate Name"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree"><span class="glyphicon glyphicon-menu-right"></span> </a>Patricia</td>
+														<td data-th="Booked Hours">Manager</td>
+														<td data-th="Job Role">14:30</td>
+														<td data-th="Job Role">14:30</td>
+														<td data-th="Difference">+00:30</td>
+														<td data-th="Action">
+															<span class="status reject">Rejected</span>
+														</td>
+													</tr>
+												</body>
+											</table>
+										</div>
+										<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+											<div class="panel-body">
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="ElementDetail__table" role="tab" id="headingFour">
+											<table>
+												<body>
+													<tr>
+														<td data-th="Candidate Name"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour"><span class="glyphicon glyphicon-menu-right"></span> </a>Patricia</td>
+														<td data-th="Booked Hours">Manager</td>
+														<td data-th="Job Role">14:30</td>
+														<td data-th="Job Role">14:30</td>
+														<td data-th="Difference">+00:30</td>
+														<td data-th="Action">
+															<span class="action-button accept">Approve</span>
+															<span class="action-button decline">Reject</span>
+														</td>
+													</tr>
+												</body>
+											</table>
+										</div>
+										<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+											<div class="panel-body">
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="ElementDetail__table" role="tab" id="headingFive">
+											<table>
+												<body>
+													<tr>
+														<td data-th="Candidate Name"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive"><span class="glyphicon glyphicon-menu-right"></span> </a>Patricia</td>
+														<td data-th="Booked Hours">Manager</td>
+														<td data-th="Job Role">14:30</td>
+														<td data-th="Job Role">14:30</td>
+														<td data-th="Difference">+00:30</td>
+														<td data-th="Action">
+															<span class="action-button accept">Approve</span>
+															<span class="action-button decline">Reject</span>
+														</td>
+													</tr>
+												</body>
+											</table>
+										</div>
+										<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+											<div class="panel-body">
+											</div>
+										</div>
+									</div>
+								</div>
+								<ul class="custom-pagination text-right">
+									<li><a href="#">Previous</a></li>
+									<li><a href="#">1</a></li>
+									<li class="active"><a href="#">2</a></li>
+									<li><a href="#">Next</a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					<footer>
+						<div class="row">
+							<div class="col-sm-6"><p> &copy; Blue Arrow, All rights reserved 2018.</p></div>
+							<div class="col-sm-6"><p>Regd Address:  800 The Boulevard, Capability Green, Luton, Bedfordshire, LU1 3BA. Company No. 00641659</p></div>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+		<div class="sidenav-overlay"></div>
+		<div class="search-overlay"></div>
+
+		<!-- JavaScript Link -->
+		<script src="assets/js/main.min.js"></script>
+		<script src="assets/js/custom.js"></script>
+		
+	</body>
+</html>
