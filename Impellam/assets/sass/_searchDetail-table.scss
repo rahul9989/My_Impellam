@@ -1,0 +1,116 @@
+.searchDetail-section {
+	@include space(margin, top, $size-8);
+	@include space(margin, bottom, $size-7);
+	background-color: $white;
+	@include border(1px, solid, $border-gray-light);
+	position: relative;
+	table {
+		&.searchDetail_table {
+
+			width: $full-size;
+			font-family: $global-font-meduim;
+			thead {
+				th {
+					&:last-child {
+						text-align: center;
+					}
+					&:nth-child(n+5) {
+						&:after {
+							content: none;
+						}
+					}
+				}
+			}
+			tbody {
+				tr {
+					td {
+						.custom-checkbox {
+							@include space(margin, top, 0);
+
+							&.shift-checkbox {
+								.checkmark {
+									height: $size-1x5;
+        							width: $size-1x5;
+        							@include border(1px, solid, darken($border-gray-light, 10%));
+
+        							&:after {
+						                left: 4px;
+						                top: 0;
+						                width: 0.5rem;
+						                height: 1rem;
+						                border: solid #000;
+						                border-width: 0 1px 1px 0;
+						            }
+								}
+							}
+						}
+						span {
+							&.edit_action {
+								background-color: $light-blue;
+								@include space(padding, all, 0.8rem);
+								@include space(padding, left, $size-3);
+								@include space(padding, bottom, $size-1);
+								@include font-size($small);
+								color: $white;
+								display: inline-block;
+								cursor: pointer;
+								@include background('../img/sprite.png', -71px -722px, no-repeat, initial);
+								font-family: arial;
+								min-width: 8.7rem;
+							}
+						}
+						&:last-child {
+							text-align: center;
+							@include breakpoint(desktop) {
+								text-align: left;
+							}
+						}
+					}
+				}
+			}
+
+			&.approved-timesheet-table {
+				thead {
+					th {
+						&:nth-child(n+4) {
+							&:after { 
+								content: none !important;
+							}
+						}
+					}
+				}
+			}
+			&.vacancy_table {
+				thead {
+					th {
+						&:nth-child(-n+5) {
+							&:after { 
+								content: "\e150" !important;
+							}
+						}
+					}
+				}
+			}
+			&.book-temp-table {
+				thead {
+					tr {
+						th {
+							&:last-child {
+								min-width: 180px;
+							}
+						}
+					}
+				}
+				tbody {
+					tr {
+						td {
+							&:last-child {
+								min-width: 180px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

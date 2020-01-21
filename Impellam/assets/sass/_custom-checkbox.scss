@@ -1,0 +1,132 @@
+/*Custom Checkbox CSS start*/
+
+$light-gray: #9e9e9e;
+
+.custom-checkbox {
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    float: left;
+    height: $size-2;
+    color: $scorpion;
+    font-family: $global-font-regular;
+    @include space(margin, top, $size-3);
+    @include space(padding, left, $size-2x5);
+    @include font-size($small);
+
+    //@media (max-width: $tablet-width) {
+       // @include space(margin, bottom, $extraMedium);
+       // @include space(margin, top, $extraSmall)
+    //}
+
+    //@media (max-width: $mobile-width) {
+        //@include space(margin, bottom, $medium);
+    //}
+
+    input {
+        @include absolute();
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked {
+            ~ .checkmark {
+                background-color: $light-blue;
+                
+                &:after {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .checkmark {
+        @include absolute(0, 0, auto, auto);
+        height: $size-1x5;
+        width: $size-1x5;
+        background-color: $white;
+        @include border(1px, solid, $light-blue);
+
+        &:after {
+            content: "";
+            @include absolute();
+            display: none;
+            left: 4px;
+            top: 0;
+            width: 0.5rem;
+            height: 1rem;
+            border: solid $white;
+            border-width: 0 1px 1px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+
+
+
+
+    &.shift-checkbox {
+
+        @include space(margin, top, $zero-size);
+
+        input {
+            &:checked {
+                ~ .checkmark {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        .checkmark {
+            height: $size-2;
+            width: $size-2;
+            @include border(2px, solid, darken($border-gray-light, 10%));
+
+            &:after {
+                left: 5px;
+                top: 1px;
+                width: 0.5rem;
+                height: 1.2rem;
+                border: solid #000;
+                border-width: 0 2px 2px 0;
+            }
+        }
+    }
+}
+
+.custom-checkbox-all {
+    @include space(padding, left, $size-2);
+    @include space(margin, top, $size-2);
+    @include space(margin, bottom, $size-2);
+    height: auto;
+    .checkmark {
+        @include absolute(-2px, auto, auto, 0);
+        height: $small;
+        width: $small;
+
+        &:after {
+            left: 5px;
+            top: 1px;
+            width: 0.4375rem;
+            height: 0.75rem;
+        }
+    } 
+}
+
+/*Custom Checkbox CSS End*/
+
+.match-shift {
+    width: $full-size;
+    height: $size-5;
+    @include flexbox;
+    align-items: center;
+    @include space(margin, bottom, $size-1x5);
+    @include space(padding, bottom, $size-1);
+    @include space(padding, top, $size-1);
+    @include space(padding, left, $size-1);
+    @include space(padding, right, $size-1);
+    border: 1px solid $border-gray-light;
+}

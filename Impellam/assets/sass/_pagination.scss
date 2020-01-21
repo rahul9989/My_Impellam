@@ -1,0 +1,52 @@
+.show-rows {
+	font-family: arial;
+	@include font-size($normal);
+	position: absolute;
+    right: 0;
+    top: -$size-3;
+	@include breakpoint(mobile) {
+		&.text-right {
+			text-align: center;
+			position: initial;
+			@include space(margin, bottom, $size-1);
+		}
+	}
+}
+
+ul {
+	&.custom-pagination {
+		@include space(margin, bottom, $size-2);
+		@include breakpoint(mobile) {
+			text-align: center !important;
+		}
+		li {
+			display: inline-block;
+			&.active {
+				a {
+					color: $white;
+					background: $light-blue;
+				}
+			}
+			a {
+			 	color: $dim-gray;
+			 	@include font-size($small);
+			 	@include space(padding, top, $size-0x5);
+			 	@include space(padding, bottom, $size-0x5);
+			 	@include space(padding, left, 1.2rem);
+			 	@include space(padding, right, 1.2rem);
+			 	@include border(1px, solid, $border-gray-light);
+			 	background: $white;
+			 	@include space(margin, left, $size-1);
+			 	text-decoration: none;
+			}
+			&:hover {
+				background: transparent;
+			}
+		}
+	}
+}
+
+.tab-content {
+	position: relative;
+}
+

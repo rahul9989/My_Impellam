@@ -1,0 +1,164 @@
+.dashboard-section {
+	&__leftNav {
+		width: 17rem;
+		height: $full-size;
+		background-color: $light-blue;
+		text-align: center;
+		position: fixed;
+		z-index: 9999;
+		@include space(padding, top, $size-4);
+
+		@include breakpoint(mobile) {
+			@include absolute(0);
+			left: -100vw;
+			transition: all 0.3s;
+			overflow: scroll;
+    		padding-bottom: $size-5;
+    		width: 80vw;
+			text-align: left;
+			@include space(padding, left, $size-2);
+			@include space(padding, top, $size-2);
+		}
+
+		> li {
+			position: relative;
+			background-size: auto;
+			ul {
+				display: none;
+				@include absolute(0, auto, auto, -24rem);
+				background-color: $light-blue;
+				width: 23rem;
+    			text-align: left;
+    			@include breakpoint(mobile) {
+    				position: initial;
+    				width: $full-size;
+    			}
+
+				&:before {
+					content: '';
+				    border-right: $size-1 solid $light-blue;
+				    border-bottom: $size-1 solid transparent;
+				    border-top: $size-1 solid transparent;
+				    @include absolute;
+				    left: -10px;
+				    top: 10%;
+				}
+
+				li {
+					@include space(padding, all, $size-2);
+					@include space(padding, bottom, $size-0x5);
+					color: $white;
+					list-style-type: disc;
+					list-style-position: inside;
+
+					&:last-child {
+						@include space(padding, bottom, $size-2);
+					}
+
+					a {
+						@include space(padding, top, 0);
+						@include space(padding, bottom, 0);
+						display: inline;
+					}
+				}
+			}
+
+			&:hover {
+				ul {
+					display: block;
+				}
+			}
+
+			&.active {
+				&:before {
+					content: '';
+				    border-right: $size-1 solid $sky-blue;
+				    border-bottom: $size-1 solid transparent;
+				    border-top: $size-1 solid transparent;
+				    @include absolute;
+				    right: $zero-size;
+				    top: 16%;
+
+				    @include breakpoint(mobile) {
+				    	top: 30%;
+				    	content: none;
+				    }
+				}
+			}
+
+			a {
+				background-color: transparent;
+				color: $white;
+				display: block;
+				width: $full-size;
+				@include font-size($normal);
+				@include space(padding, top, $size-4);
+				@include space(padding, bottom, $size-4);
+				@include breakpoint(mobile) {
+					@include space(padding, top, $size-2);
+					@include space(padding, bottom, $size-2);
+					
+				}
+
+				&:hover, &:focus {
+					text-decoration: none;
+				}
+			}
+			> a {
+				@include breakpoint(mobile) {
+					@include space(padding, left, $size-4);
+				}
+			}
+		}
+
+		&--dashboard {
+			@include background('../img/sprite.png', 0 -7px);
+			@include breakpoint(mobile) {
+				@include background('../img/sprite.png', -71px 2px);
+			}
+		}
+		&--timesheets {
+			@include background('../img/sprite.png', 0 -130px);
+			@include breakpoint(mobile) {
+				@include background('../img/sprite.png', -71px -118px);
+			}
+		}
+		&--vacancies {
+			@include background('../img/sprite.png', 0 -255px);
+			@include breakpoint(mobile) {
+				@include background('../img/sprite.png', -71px -246px);
+			}
+		}
+		&--temp {
+			@include background('../img/sprite.png', 0 -380px);
+			@include breakpoint(mobile) {
+				@include background('../img/sprite.png', -71px -367px);
+			}
+		}
+		&--contact {
+			@include background('../img/sprite.png', 0 -505px);
+			@include breakpoint(mobile) {
+				@include background('../img/sprite.png', -71px -494px);
+				
+			}
+		}
+		&.active {
+			@include breakpoint(mobile) {
+				left: $zero-size;
+			}
+		}
+	}
+}
+
+.sidenav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+    z-index: 997;
+    will-change: opacity;
+    display: none;
+}
+

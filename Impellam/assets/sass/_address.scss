@@ -1,0 +1,31 @@
+.address-details {
+	h2 {
+		color: $light-blue;
+	}
+	hr {
+		border-top: 1px dashed $border-gray-light;
+		@include space(margin, top, $size-2);
+		@include space(margin, bottom, $size-5);
+		@include breakpoint(mobile) {
+			@include space(margin, top, $size-1);
+			@include space(margin, bottom, $size-2x5);
+		}
+	}
+	input {
+		&.global-input {
+			@include space(margin, bottom, $size-2);
+		}
+	}
+	label {
+		&.global-label {
+			@include space(margin, bottom, 0.8rem);
+		}
+	}
+	.bootstrap-select {
+		@include space(margin, bottom, $size-2);
+	}
+	p {
+		margin-bottom: $size-2 !important;
+		color: darken($dusty-gray, 29%);
+	}
+}

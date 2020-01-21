@@ -1,0 +1,84 @@
+input {
+	&.global-input {
+		height: $size-5;
+		@include border(1px, solid, $border-gray-light);
+		@include space(padding, top, $size-1x5);
+		@include space(padding, bottom, $size-1x5);
+		@include space(padding, left, $size-1);
+		@include space(padding, right, $size-1);
+		width: $full-size;
+		@include font-size($small);
+		@include space(margin, bottom, $size-1x5);
+		font-family: $global-font-meduim !important;
+		@include breakpoint(ipad) {
+			@include space(margin, bottom, $size-1x5);
+		}
+	}
+	
+	&.datetimepicker {
+		@include background('../img/sprite.png', 100% -606px, no-repeat, inherit);
+		cursor: pointer;
+ 	}
+}
+
+.bootstrap-select {
+	.dropdown-toggle {
+		.bs-caret {
+			.caret {
+				@include background('../img/sprite.png', -71px -2481px, no-repeat, initial);
+			    width: 26px;
+				height: 10px;
+				margin-top: 0;
+			    top: 42%;
+		        border: 0;
+			}
+		}
+	}
+	&.open {
+		.dropdown-toggle {
+			.bs-caret {
+				.caret {
+					@include background('../img/sprite.png', -71px -2571px, no-repeat, initial);
+				}
+			}
+		}
+	}
+}
+
+label {
+	&.global-label {
+		color: $dim-gray;
+		@include font-size($normal);
+		@include space(margin, bottom, $size-0x5);
+		font-family: $global-font-regular !important;
+	}
+}
+
+form {
+	.action-button {
+		@include space(padding, left, $size-6);
+		@include space(padding, right, $size-5);
+		@include space(padding, top, $size-1x5);
+		@include space(padding, bottom, $size-1x5);
+		@include breakpoint(mobile) {
+			@include space(padding, left, $size-3);
+			@include space(padding, right, $size-2);
+		}
+		@include font-size($normal);
+		&.accept {
+			@include background('../img/sprite.png', -39px -2156px, no-repeat, initial);
+			@include breakpoint(mobile) {
+				@include background('../img/sprite.png', -65px -2156px, no-repeat, initial);
+			}
+		}
+		&.decline {
+			@include background('../img/sprite.png', -42px -2278px, no-repeat, initial);
+			background-color: $doveGray;
+			@include space(margin, left, $size-3);
+			@include breakpoint(mobile) {
+				@include background('../img/sprite.png', -67px -2278px, no-repeat, initial);
+				@include space(margin, left, $size-1);
+			}
+		}
+	}
+}

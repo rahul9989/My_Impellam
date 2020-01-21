@@ -1,0 +1,45 @@
+.cIndex .errormessag {
+	padding-top: 50px !important;
+}
+
+.uiInput--select.select:not([multiple]), .uiInput--select .select:not([multiple]) {
+	font-size: 16px;
+    height: 42px;
+    line-height: 20px;
+}
+
+.chartjs-render-monitor {
+    max-width: 100%;
+}
+
+.uiLabel-left.form-element__label.uiLabel {
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.slds-select_container {
+	@include breakpoint(ipad) {
+		margin-bottom: 15px;
+	}
+}
+
+.slds-select_container .slds-select {
+    height: 5rem !important;
+    border: 1px solid #d7d7d7;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: DIN-Medium !important;
+    font-size: 1.4rem !important;
+    line-height: normal !important;
+}
+
+.slds-select_container::after {
+    margin-bottom: 19px;
+    width: 9px;
+    margin-right: 8px;
+    border-top: 6px solid #bbb;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}

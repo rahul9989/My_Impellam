@@ -1,0 +1,300 @@
+.headeNav {
+	@include space(padding, left, $size-3);
+	@include space(padding, right, $size-3);
+	border-bottom: 1px solid $border-gray;
+	position: relative;
+	@include breakpoint(ipad) {
+		@include space(padding, left, $size-1x5);
+		@include space(padding, right, $size-1x5);
+		@include space(padding, top, $size-1x5);
+		@include space(padding, bottom, $size-1x5);
+	}
+	> a {
+		&.logo {
+			> img {
+				@include breakpoint(ipad) {
+					width: 16.5rem;
+				}
+
+				@include breakpoint(mobile) {
+					width: 15rem;
+				}
+
+				@include breakpoint(small) {
+					width: 12rem;
+				}
+			}
+		}
+		
+	}
+	
+	@include space(padding, top, $size-2);
+	@include space(padding, bottom, $size-2);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	background-color: $white;
+
+	.mobile-nav {
+		@include breakpoint(mobile) {
+			display: inline-block !important;
+		    position: relative;
+		    top: -1.1rem;
+		    margin-right: $size-1;
+		}
+		@include breakpoint(small) {
+			top: -.5rem;
+		}
+	}
+
+	&__right {
+		float: right;
+		border-left: 2px solid $border-gray;
+		@include breakpoint(ipad) {
+			border-left: none;
+			@include space(padding, left, $zero-size);
+		}
+		@include space(padding, left, $size-1);
+
+		> li {
+			> a {
+				display: flex;
+    			align-items: center;
+				color: $gray;
+				@include font-size(21);
+				@include breakpoint(ipad) {
+					@include font-size($large);
+				}
+
+				&:hover, &:focus {
+					text-decoration: none;
+				}
+
+				span {
+					&:first-child {
+						@include space(padding, right, $size-1);
+					}
+				}
+
+				img {
+					width: $size-5x5;
+					height: $size-5x5;
+					border-radius: $half-size;
+					position: relative;
+
+					@include breakpoint(ipad) {
+						width: $size-4x5;
+						height: $size-4x5;
+					}
+
+					@include breakpoint(small) {
+						width: $size-3x5;
+						height: $size-3x5;
+					}
+				}
+			}
+		}
+		.dropdown-menu {
+			right: $size-1x5;
+			left: auto;
+			min-width: 21rem;
+			background-color: $light-blue;
+			@include breakpoint(mobile) {
+				right: $size-0x5;
+				min-width: 15rem;
+				width: 98%;
+			}
+			li {
+				a {
+					color: $white;
+					@include font-size($large);
+					@include space(padding, top, $size-1);
+					@include space(padding, bottom, $size-1);
+					@include breakpoint(mobile) {
+						@include font-size($small);
+						@include space(padding, top, $size-0x5);
+						@include space(padding, bottom, $size-0x5);
+						@include space(padding, left, $size-1);
+						@include space(padding, right, $size-1);
+					}
+					&:hover {
+						background-color: $white;
+						color: $light-blue;
+					}
+				}
+			}
+		}
+	}
+
+	&__notification {
+		float: right;
+	    position: relative;
+	    @include breakpoint(mobile) {
+	    	position: initial;
+	    }
+		&:hover, &:focus {
+			text-decoration: none;
+		}
+
+		.dropdown-menu {
+			top: 85px;
+    		right: 0;
+    		left: auto;
+    		@include breakpoint(ipad) {
+    			top: 62px;
+    		}
+    		@include breakpoint(mobile) {
+    			top: $full-size;
+    			width: $full-size;
+    		}
+		}
+
+		img {
+			position: relative;
+    		top: $size-1x5;
+    		@include breakpoint(ipad) {
+    			width: 2.2rem;
+    		}
+    		@include breakpoint(mobile) {
+    			top: 1.2rem;
+    		}
+    		@include breakpoint(small) {
+    			top: .8rem;
+    		}
+		}
+		span {
+			&.badge {
+				background-color: $light-blue;
+			    border-radius: $half-size;
+			    position: relative;
+			    left: -1.7rem;
+			    top: -2px;
+			    @include space(padding, top, 2px);
+			    @include space(padding, bottom, 2px);
+			    @include space(padding, left, 5px);
+			    @include space(padding, right, 5px);
+			    font-weight: normal;
+
+			    @include breakpoint(ipad) {
+			    	left: -1.5rem;
+    				top: 4px;
+			    }
+
+			    @include breakpoint(mobile) {
+	    			@include font-size($xx-small);
+	    			top: $zero-size;
+	    		}
+	    		@include breakpoint(small) {
+	    			top: -5px;
+	    		}
+			}
+		}
+	}
+	&__search {
+		float: right;
+		cursor: pointer;
+		position: relative;
+		@include breakpoint(mobile) {
+			position: initial;
+		}
+		z-index: 99;
+		@include space(margin, top, $size-1x5);
+		@include space(margin, right, $size-5);
+		@include breakpoint(desktop) {
+			@include space(margin, right, $size-1x5);
+		}
+		@include breakpoint(ipad) {
+			@include space(margin, top, $size-1);
+		}
+		@include breakpoint(mobile) {
+			@include space(margin, top, $size-0x5);
+		}
+		@include breakpoint(small) {
+			@include space(margin, right, $size-0x5);
+			@include space(margin, top, $zero-size);
+		}
+
+		img {
+			@include absolute($size-1, auto, auto, $size-0x5);
+			width: 2rem !important;
+			@include breakpoint(mobile) {
+				position: relative;
+			}
+		}
+
+		input[type="search"] {
+			border: 1px solid $border-gray;
+			@include space(padding, all, $size-1);
+			@include font-size($small);
+			width: 0;
+			transition: all 0.3s;
+			opacity: 0;
+
+			@include breakpoint(mobile) {
+				position: absolute;
+				top: 85px;
+				height: 49px;
+				right: 15px;
+				z-index: 99;
+			}
+
+			@include breakpoint(small) {
+				top: 77px;
+			}
+		}
+	}
+	&__selectpicker {
+		float: right;
+		@include space(margin, top, -1.4rem);
+		z-index: 9;
+		.bootstrap-select {
+			@include space(margin, bottom, $zero-size);
+			& > .dropdown-toggle {
+				background-color: $light-blue !important;
+				border: none;
+				color: $white;
+				@include space(margin, bottom, $zero-size);
+				@include breakpoint(ipad) {
+					height: 4.7rem;
+				}
+			}
+
+			.bs-caret {
+				.caret {
+					background-position: -71px -2671px !important;
+				}
+			}
+			&.open {
+				.dropdown-toggle {
+					.bs-caret {
+						.caret {
+							background-position: -71px -2761px !important;
+						}
+					}
+				}
+			}
+		}
+		
+		@include breakpoint(mobile) {
+			@include space(margin, top, $zero-size);
+		}
+		@include breakpoint(mobile) {
+			float: none;
+			width: $full-size;
+			@include absolute(auto, auto, -7.5rem, auto);
+			@include space(margin, right, -$size-1x5);
+			@include space(margin, left, -$size-1x5);
+		}
+	}
+}
+
+
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: rgba(0,0,0,0);
+    z-index: 9;
+    will-change: opacity;
+    display: none;
+}

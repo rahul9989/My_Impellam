@@ -1,0 +1,23 @@
+.tooltip-btn {
+	border: none !important;
+	background-color: transparent;
+	outline: 0;
+	@include space(padding, left, $zero-size);
+	@include space(padding, right, $zero-size);
+	position: relative;
+    top: -$size-0x5;
+}
+
+.tooltip {
+	.tooltip-arrow {
+		border-right-color: $border-gray-light !important;
+	}
+	.tooltip-inner {
+		border-radius: $zero-size;
+		color: $dim-gray;
+		border: 1px solid $border-gray-light;
+		background: #f6f6f6;
+		font-family: arial;
+		@include font-size($small);
+	}
+}

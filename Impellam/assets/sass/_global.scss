@@ -1,0 +1,118 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: $zero-size;
+	padding: $zero-size;
+	border: $zero-size;
+	font-size: $full-size;
+	font: inherit;
+	vertical-align: baseline;
+	font-family: $global-font;
+
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	background-color: $white;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: $zero-size;
+}
+
+html, body, .container-fluid, .loginSection {
+	height: $full-size;
+}
+
+.container-fluid {
+	padding: $zero-size;
+}
+
+.container {
+	max-width: 1250px;
+	width: 100% !important;
+}
+
+hr {
+	@include space(margin, top, .3rem);
+	@include space(margin, bottom, .3rem);
+}
+
+h1 {
+	@include font-size($xxxx-large);
+	color: $gray;
+	@include breakpoint(mobile) {
+		@include font-size($xxx-large);
+	}
+}
+
+h2 {
+	color: $white;
+	@include font-size($xxx-large);
+	@include line-height($xxxx-large);
+	@include space(margin, bottom, $size-1x5);
+
+	@include breakpoint(ipad) {
+		@include font-size($xx-large);
+		@include line-height($xxx-large);
+	}
+
+	@include breakpoint(mobile) {
+		@include font-size($x-large);
+		@include line-height($xxx-large);
+	}
+}
+
+h3 {
+	color: $light-blue;
+	@include font-size($large);
+	@include space(padding, bottom, $size-1x5);
+}
+
+p {
+	color: $gray;
+	@include font-size($normal);
+	@include line-height($xx-large);
+}
+
+img {
+	max-width: $full-size;
+}
+
+ul {
+	li {
+		@include font-size($normal);
+		@include line-height($xx-large);
+	}
+}
+
+textarea {
+	width: $full-size;
+	@include space(padding, bottom, $size-1x5);
+	@include space(padding, top, $size-1x5);
+	@include space(padding, left, $size-1);
+	@include space(padding, right, $size-1);
+	@include space(margin, bottom, $size-1x5);
+	font-family: arial;
+	@include font-size($small);
+	border: 1px solid $border-gray-light;
+	resize: none;
+	outline: none;
+}

@@ -1,0 +1,39 @@
+// Bootstrap File
+@import "bootstrap";
+
+// Partials Files
+@import "variables";
+@import "mixin";
+@import "font";
+@import "global";
+@import "login";
+@import "button";
+@import "input_style";
+@import "custom-checkbox";
+@import "headeNav";
+@import "dashboard";
+@import "leftNav";
+@import "singleElement";
+@import "chart";
+@import "timesheet-section";
+@import "search-section";
+@import "bootstrap-select";
+@import "date-time-picker";
+@import "form";
+@import "data-table";
+@import "searchDetail-table";
+@import "popup";
+@import "footer";
+@import "booked-actual-time";
+@import "tabs";
+@import "tooltip";
+@import "rating";
+@import "calendar";
+@import "accordian";
+@import "pagination";
+@import "address";
+@import "lightining-override";
+
+html {
+	font-size: 62.5%; /* Sets up the Base 10 stuff */
+}

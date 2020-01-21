@@ -1,0 +1,89 @@
+input {
+    &:focus {
+        outline: 0;  
+    }
+
+    &.login {
+        @include font-size($normal);
+        @include space(margin, top, $size-6);
+        @include breakpoint(mobile) {
+           @include space(margin, top, $size-4);
+        }
+        border: none;
+        width: $full-size;
+        background: rgba(0, 0, 0, 0);
+        transition: padding-top 0.2s ease, margin-top 0.2s ease;
+        overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+
+        & + label {
+            display: block;
+            position: relative;
+            white-space: nowrap;
+            padding: $zero-size;
+            margin: $zero-size;
+            @include border(1px, solid, lighten($blue, 26.6%));
+            -webkit-transition: width 0.4s ease;
+            transition: width 0.4s ease;
+            height: $zero-size;
+
+            & > span {
+                margin: $zero-size;
+                color: $blue;
+                @include absolute(-2.5rem, 0px);
+                @include font-size($normal);
+                pointer-events: none;
+                -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+                transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+
+                .fa-2x {
+                    @include font-size($large);
+                    @include space(margin, right, $size-0x5);
+                }
+            }
+        }
+
+        &:focus {
+            & + label {
+                & > span {
+                    top: -$size-5;
+                    @include font-size($x-small);
+
+                    .fa-2x {
+                        @include font-size($small);
+                    }
+                }
+            }
+        }
+        &:valid {
+            & + label {
+                & > span {
+                    top: -$size-5;
+                    @include font-size($x-small);
+                }
+
+                .fa-2x {
+                    @include font-size($small);
+                }
+            }
+        }
+    }
+}
+
+
+
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+input:-webkit-autofill ~ label span {
+    top:-50px;
+    @include font-size($x-small);
+} 

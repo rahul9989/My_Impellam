@@ -1,0 +1,140 @@
+.tab-section {
+	@include space(margin, top, $size-8);
+	@include breakpoint(mobile) {
+		@include space(margin, top, $size-2x5);
+	}
+	.nav-tabs {
+		border: none;
+		text-align: center;
+		@include space(margin, bottom, $size-2x5);
+		> li {
+			@include space(margin, right, $size-4);
+			@include breakpoint(mobile) {
+				@include space(margin, top, $size-2);
+				@include space(margin, right, $size-2);
+				float: none;
+    			display: inline-block;
+			}
+			> a {
+				@include space(padding, left, $zero-size);
+				@include space(padding, right, $zero-size);
+				@include space(padding, top, $zero-size);
+				@include space(padding, bottom, $size-0x5);
+				background-color: transparent !important;
+				color: $dusty-gray;
+				border-bottom: 2px solid transparent;
+				@include font-size($large);
+				font-family: $global-font-regular;
+
+				&:hover {
+					border: 1px solid transparent;
+				}
+			}
+			&.active {
+				a {
+					border: 1px solid transparent;
+					color: $dim-gray;
+					border-bottom: 2px solid $light-blue;
+				}
+			}
+		}
+	}
+	.tab-content {
+		.tab-pane {
+			.searchDetail-section {
+				@include space(margin, top, $zero-size);
+				@include space(margin, bottom, $zero-size);
+				@include breakpoint(mobile) {
+					@include space(margin, top, $size-4);
+				}
+
+				table {
+					&.searchDetail_table {
+						thead {
+							tr {
+								th {
+									@include breakpoint(desktop) {
+										min-width: 110px;
+									}
+									max-width: 120px;
+									@include space(padding, left, $size-1);
+									@include space(padding, right, $size-1x5);
+									
+									&:first-child{
+										min-width: auto;
+										width: $size-4 !important;
+										@include space(padding, left, $size-4);
+										@include space(padding, right, $zero-size);
+										
+										&:after {
+											content: none !important;
+										}
+									}
+									&:last-child {
+										min-width: 180px;
+									}
+									&.booked-time {
+										background-color: $polar;
+										text-align: center;
+									}
+									&.actual-time {
+										background-color: lighten($porcelain, 2%);
+										text-align: center;
+									}
+								}
+							}
+						}
+						tbody {
+							tr {
+								td {
+									@include breakpoint(desktop) {
+										min-width: 110px;
+									}
+									max-width: 110px;
+									@include space(padding, left, $size-1);
+									@include space(padding, right, $size-1x5);
+
+									&:first-child {
+										min-width: auto;
+										width: $size-4;
+										@include space(padding, left, $size-4);
+										@include space(padding, right, $zero-size);
+									}
+									&:last-child {
+										min-width: 180px;
+										text-align: center;
+										@include breakpoint(desktop) {
+											text-align: left;
+										}
+									}									
+								}
+								&:last-child {
+									td {
+										&.time {
+											border-bottom: 0;
+										}
+									}
+								}
+
+								&.selected-rows {
+									background-color: $chrome-white;
+
+									td {
+										&.booked-time {
+											background-color: #e5f2e8;
+											text-align: center;
+										}
+										&.actual-time {
+											background-color: lighten(#e5f2e8, 2%);
+											text-align: center;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

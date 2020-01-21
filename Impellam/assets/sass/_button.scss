@@ -1,0 +1,221 @@
+%btn {
+	font-family: $global-font-light;
+	@media not all and (min-resolution:.001dpcm)
+		{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+
+			font-family: Arial, sans-serif;
+		}}
+	color: $white;
+	@include border;
+	display: inline-block;
+	background: transparent;
+	transition: 0.5s;
+	@include font-size($large);
+	@include space(padding, top, $size-1);
+	@include space(padding, bottom, $size-1x5);
+	@include space(padding, left, $size-2);
+	@include space(padding, right, $size-2);
+	@include breakpoint(mobile) {
+		@include space(padding, top, $size-0x5);
+		@include space(padding, left, $size-1);
+		@include space(padding, right, $size-1);
+		@include space(padding, bottom, $size-1);
+	}
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+%home-btn {
+	text-transform: uppercase;
+	@include space(padding, top, $size-2 );
+	@include space(padding, bottom, $size-2 );
+	@include space(padding, left, $size-4x5 );
+	@include space(padding, right, $size-4x5 );
+	&:hover {
+		color: $blue;
+		background: $white;
+		text-decoration: none;
+	}
+}
+
+.more-btn {
+	@extend %btn;
+	@extend %home-btn;
+	@include space(margin, top, $size-9);
+	&:focus {
+		color: $white;
+		&:hover {
+			color: $blue;
+		}
+	}
+	@include breakpoint(ipad) {
+		@include space(margin, top, $size-3);
+	}
+	@include breakpoint(mobile) {
+		@include space(margin, top, $zero-size);
+		@include space(padding, top, $size-1x5 );
+		@include space(padding, bottom, $size-1x5 );
+		@include space(padding, left, $size-3 );
+		@include space(padding, right, $size-3 );
+	}
+}
+
+.login-btn {
+	@extend %btn;
+	@extend %home-btn;
+	@include font-size(21);
+	&:hover {
+		color: $lime;
+	}
+	&:focus {
+		color: $white;
+		&:hover {
+			color: $lime;
+		}
+	}
+	@include space(margin, top, $size-10);
+	@include breakpoint(ipad) {
+		@include space(margin, top, $size-4);
+	}
+	@include breakpoint(mobile) {
+		@include space(margin, top, $size-2);
+	}
+	background: $lime;
+	width: $full-size;
+	&:hover {
+		@include border(1px, solid, $lime);
+	}
+}
+
+.query-btn {
+	@extend %btn;
+	@include space(margin, top, $size-1x5);
+	@include space(padding, top, $size-1);
+	@include space(padding, bottom, $size-1);
+	@include space(padding, left, $size-2x5);
+	@include space(padding, right, $size-2x5);
+	background: $light-blue;
+	font-family: arial;
+	@include font-size($normal);
+	@include absolute(auto, auto, $size-1x5, $size-1x5);
+	&:hover {
+		@include border(1px, solid, $light-blue);
+		background: $white;
+		color: $light-blue;
+	}
+}
+
+.search-btn {
+	@extend %btn;
+	background: $light-blue;
+	height: $size-5;
+	@include font-size(15);
+	width: calc(50% - 1%);
+	max-width: 150px;
+	@include breakpoint(mobile) {
+		width: $full-size;
+		max-width: $full-size;
+	}
+	//@include space(margin, top, $size-2);
+	&:hover {
+		@include border(1px, solid, $light-blue);
+		background: $white;
+		color: $light-blue;
+	}
+}
+
+.clearAll-btn {
+	@extend %btn;
+	background: $doveGray;
+	height: $size-5;
+	@include font-size(15);
+	width: calc(50% - 1%);
+	max-width: 150px;
+	@include breakpoint(mobile) {
+		width: $full-size;
+		max-width: $full-size;
+	}
+	@include space(margin, top, $size-2);
+	&:hover {
+		@include border(1px, solid, $doveGray);
+		background: $white;
+		color: $doveGray;
+	}
+}
+
+.approve-btn {
+	@extend %btn;
+	background: $lime;
+	border: none;
+	@include space(margin, top, $size-2);
+	@include space(margin, bottom, $size-2);
+	@include space(margin, right, $size-0x5);
+	@include space(padding, left, $size-4);
+	@include space(padding, right, $size-4);
+	height: $size-5;
+	@include breakpoint(small) {
+		@include space(margin, top, $size-6);
+	}
+}
+
+.action-button {
+	@include space(padding, left, $size-2x5);
+	@include space(padding, right, $size-1);
+	@include space(padding, top, .8rem);
+	@include space(padding, bottom, $size-1);
+	color: $white;
+	font-family: arial;
+	cursor: pointer;
+	@include font-size($small);
+	border: $zero-size;
+	display: inline-block;
+	min-width: 8.7rem;
+
+	&.accept {
+		@include background('../img/sprite.png', -75px -848px, no-repeat, initial);
+		background-color: $lime;
+		margin-right: .5rem;
+		margin-bottom: .5rem;
+	}
+	&.decline {
+		@include background('../img/sprite.png', -70px -977px, no-repeat, initial);
+		background-color: $brilliant-rose;
+		margin-right: .5rem;
+		margin-bottom: .5rem;
+	}
+	&.edit {
+		@include background('../img/sprite.png', -42px -2366px, no-repeat, initial);
+		@include breakpoint(mobile) {
+			@include background('../img/sprite.png', -61px -2366px, no-repeat, initial);
+		}
+		background-color: $light-blue;
+	}
+	&.feedback {
+		@include background('../img/sprite.png', -70px -2045px, no-repeat, initial);
+		background-color: $dark-blue-btn;
+		@include space(padding, left, $size-3);
+	}
+}
+
+.status {
+	@include space(padding, left, $size-2x5);
+	&.complete {
+		color: $atlantis;
+		@include background('../img/sprite.png', -75px -1583px, no-repeat, initial);
+	}
+	&.in-progess {
+		color: $yellow;
+		@include background('../img/sprite.png', -75px -1812px, no-repeat, initial);
+	}
+	&.uncomplete {
+		color: $mazenta;
+		@include background('../img/sprite.png', -75px -1932px, no-repeat, initial);
+	}
+	&.reject {
+		color: $mazenta;
+		@include background('../img/sprite.png', -75px -1696px, no-repeat, initial);
+	}
+}
+
+

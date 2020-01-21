@@ -1,0 +1,20 @@
+footer {
+	.col-sm-6 {
+		&:last-child {
+			text-align: right;
+			@include breakpoint(mobile) {
+				text-align: center;
+			}
+		}
+		@include breakpoint(mobile) {
+			text-align: center;
+		}
+	}
+	p {
+		@include font-size($x-small);
+		color: $dark-gray;
+		font-family: arial;
+		@include space(margin, bottom, $size-1x5);
+	}
+	
+}

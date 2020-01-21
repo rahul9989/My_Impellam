@@ -1,0 +1,140 @@
+// FONT
+@mixin font-size($value: 10) {
+	font-size: $value + px;
+	font-size: (0.1 * $value) + rem;
+}
+
+// LINE HEIGHT
+@mixin line-height($value: 10) {
+	line-height: $value + px;
+	line-height: (0.1 * $value) + rem;
+}
+
+// DISPLAY FLEX
+@mixin flexbox {
+	display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+}
+
+// SPACE PADDING AND MARGIN
+@mixin space($type, $direction, $amount) {
+	@if($type == padding) {
+		@if($direction == all) {
+			padding: $amount;
+		} 
+		@else if($direction == top) {
+			padding-top: $amount;
+		} 
+		@else if($direction == left) {
+			padding-left: $amount;
+		}
+		@else if($direction == bottom) {
+			padding-bottom: $amount;
+		}
+		@else if($direction == right) {
+			padding-right: $amount;
+		}
+	}
+	@else {
+		@if($direction == all) {
+			margin: $amount;
+		} 
+		@else if($direction == top) {
+			margin-top: $amount;
+		} 
+		@else if($direction == left) {
+			margin-left: $amount;
+		}
+		@else if($direction == bottom) {
+			margin-bottom: $amount;
+		}
+		@else if($direction == right) {
+			margin-right: $amount;
+		}
+	}
+}
+
+// MEDIA SCREEN
+@mixin breakpoint($point) {
+	@if ($point == desktop) {
+		@media (max-width: 1220px) {
+			@content;
+		}
+	}
+	@else if ($point == ipad) {
+		@media (max-width: 991px) {
+			@content;
+		}
+	}
+	@else if ($point == mobile) {
+		@media (max-width: 767px) {
+			@content;
+		}
+	}
+	@else if ($point == small) {
+		@media (max-width: 575px) {
+			@content;
+		}
+	}
+	@else if ($point == loginRightBreakup) {
+		@media (max-width: 567px) {
+			@content;
+		}
+	}
+}
+
+// BACKGROUND IMAGE
+@mixin background($imgPath, $imgPosition: 0 0, $imgRepeat: no-repeat, $size: cover) {
+	background-image: url($imgPath);
+	background-position: $imgPosition;
+	background-repeat: $imgRepeat;
+	background-size: $size;
+}
+
+// PLACEHOLDER
+@mixin placeholder($color) {
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+		color: $color;
+	}
+
+	&::-moz-placeholder { /* Firefox 19+ */
+		color: $color;
+	}
+
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+
+	&::placeholder { 
+		color: $color;
+	}
+}
+
+// BORDER 
+@mixin border($width: 1px, $type: solid, $color: $white) {
+	border: $width $type $color;
+}
+
+// ABSOLUTE POSITION
+@mixin absolute($top: auto, $left: auto, $bottom: auto, $right: auto) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	bottom: $bottom;
+	right: $right;
+}
+
+// BORDER RADIUS
+@mixin border-radius($width) {
+	border-radius: $width;
+	-moz-border-radius: $width;
+    -webkit-border-radius: $width;
+    -khtml-border-radius: $width;
+}

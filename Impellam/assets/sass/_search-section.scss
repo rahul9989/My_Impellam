@@ -1,0 +1,30 @@
+.search-section {
+	@include space(padding, top, $size-3);
+	@include space(padding, bottom, $size-3);
+	@include space(padding, left, $size-2x5);
+	@include space(padding, right, $size-1x5);
+	background-color: $white;
+	@include border(1px, solid, $border-gray-light);
+	position: relative;
+	@include breakpoint(ipad) {
+		@include space(padding, left, $size-1x5);
+	}
+
+	&.vacancies-section {
+		max-width: 86rem;
+		width: 100%;
+		@include space(padding, right, $size-3x5);
+		@include space(margin, bottom, $size-3);
+		@include breakpoint(ipad) {
+			@include space(padding, right, $size-1x5);
+		}
+
+		p {
+			@include space(margin, bottom, $size-4x5);
+			font-family: arial;
+			@include breakpoint(mobile) {
+				@include space(margin, bottom, $size-2x5);
+			}
+		}
+	}
+}

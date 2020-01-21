@@ -1,0 +1,33 @@
+.timesheet-section {
+	height: calc(100vh - 105px);
+	max-height: calc(100vh - 105px);
+	background-color: $sky-blue;
+	overflow: auto;
+	@include space(padding, left, $size-3);
+	@include space(padding, right, $size-1x5);
+	@include breakpoint(desktop) {
+		@include space(padding, left, $size-1x5);
+	}
+	@include breakpoint(ipad) {
+		height: calc(100vh - 78px);
+    	max-height: calc(100vh - 78px);
+		width: $full-size;
+	}
+	@include breakpoint(mobile) {
+		@include space(padding, left, $zero-size);
+		@include space(padding, right, $zero-size);
+	}
+
+	&__right-part {
+		width: auto;
+    	margin-left: 17rem;
+    	@include space(padding, top, $size-3);
+    	@include space(padding, left, $size-3);
+
+	    @include breakpoint(mobile) {
+			margin-left: $zero-size;
+			@include space(padding, left, $size-1x5);
+			@include space(padding, right, $size-1x5);
+		}
+	}
+}

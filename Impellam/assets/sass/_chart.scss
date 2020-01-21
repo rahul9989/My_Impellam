@@ -1,0 +1,92 @@
+#circleChart {
+	width: 27rem;
+	height: 27rem;
+	@media (max-width: 1365px) and (min-width: 1221px) {
+		height: 24rem; 
+		width: 24rem;
+	}
+	margin: auto;
+	@include breakpoint(small) {
+		width: 25rem;
+		height: 25rem;
+	}
+	a {
+		display: none !important;
+	}
+}
+
+#myChart {
+	margin: 0 auto;
+}
+
+.canvasjs-chart-credit {
+    left: 0;
+    right: auto !important;
+    height: 40px;
+    background: #fff;
+    text-indent: -9999px !important;
+    width: 60px;
+}
+
+#chartContainer {
+	height: 30rem; 
+	width: 30rem;
+	@media (max-width: 1465px) and (min-width: 1221px) {
+		height: 23rem; 
+		width: 23rem;
+	}
+	@include space(margin, bottom, $size-1);
+	margin: 0 auto;
+	&__span {
+		position: absolute; 
+		top: auto; bottom: 0; 
+		left: 0; 
+		height: 50px; 
+		width: 50px; 
+		background-color: #fff;
+	}
+}
+
+.pie-title-center {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    @include space(margin, bottom, $size-2x5);
+}
+.pie-value {
+	display: block;
+	position: absolute;
+	height: 40px;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin-top: -20px;
+	line-height: 40px;
+	@include font-size($xxx-large);
+
+	& ~ p {
+		font-size: 18px !important;
+		@include space(margin, bottom, $zero-size);
+		position: absolute;
+	    width: $full-size;
+	    text-align: center !important;
+	    color: $dark-gray;
+	}
+}
+
+#demo-pie-1 {
+	@include space(margin, right, $size-1);
+	@media (max-width: 1365px) and (min-width: 1221px) {
+		@include space(margin, right, $zero-size);
+	}
+
+	.pie-value {
+		color: $mazenta;
+	}
+}
+
+#demo-pie-2 {
+	.pie-value {
+		color: $lime;
+	}
+}

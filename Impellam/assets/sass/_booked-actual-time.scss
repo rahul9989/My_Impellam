@@ -1,0 +1,128 @@
+.time, .child {
+	@include space(padding, top, $size-1);
+	@include space(padding, bottom, $size-1);
+	border-bottom: 1px solid darken($porcelain, 5%);
+
+	* {
+		font-family: arial;
+	}
+	
+	hr {
+		border-top: 1px solid darken($porcelain, 5%);
+		@include space(margin, top, .3rem);
+		@include space(margin, bottom, .3rem); 
+	}
+	
+	.time-block {
+		position: relative;
+		span {
+			position: relative;
+		}
+		.time-blockTime {
+			width: $size-9x5;
+			margin: 0 auto;
+			@include font-size($normal);
+			color: $span-gray;
+			@include space(padding, top, .7rem);
+			@include space(padding, bottom, .7rem);
+			@include space(padding, left, 1.2rem);
+			@include space(padding, right, 1.2rem);
+			background-color: $white;
+			display: block;
+			border: none;
+			text-align: center;
+		}
+
+		.time-blockEdit {
+			position: absolute;
+			top: $zero-size;
+			right: 5px;
+			cursor: pointer;
+			color: $dark-blue-btn;
+			@include font-size($x-small);
+		    padding: 0;
+		}
+	}
+
+	&.booked-time {
+		background-color: $polar;
+		text-align: center;
+		padding-left: 0.2rem !important;
+		padding-right: 0.2rem !important;
+	}
+	&.actual-time {
+		background-color: lighten($porcelain, 2%);
+		text-align: center;
+		padding-left: 0.2rem !important;
+		padding-right: 0.2rem !important;
+
+		.time-block {
+			.time-blockTime {
+				cursor: default;
+			}
+		}
+	}
+}
+
+.child {
+	padding-left: $size-1x5 !important;
+	padding-right: $size-1x5 !important;
+	td {
+		&.child {
+			.time-block {
+				display: inline-block;
+
+				.time-blockTime {
+					display: inline-block;
+					padding: 0;
+				    border: none;
+				    box-shadow: none;
+				    width: 45px;
+				    height: auto;
+				    line-height: normal;
+				}
+
+				hr {
+					@include space(margin, all, $zero-size);
+					border-left: 1px solid $border-gray-light;
+					display: inline-block;
+					height: $size-1x5;
+				    position: relative;
+    				top: 2px;
+				}
+				
+			}
+			ul {
+				li {
+					span {
+						&.edit_action {
+							padding-top: $size-0x5 !important;
+							background-position: -71px -721px !important;
+							max-height: $size-3x5;
+						}
+
+						&.decline {
+							@include space(padding, top, $size-0x5);
+							background-position: -74px -977px;
+							max-height: $size-3x5;
+						}
+
+						&.accept {
+							@include space(padding, top, $size-0x5);
+							background-position: -75px -845px;
+							max-height: $size-3x5;
+						}
+
+						&.dtr-title {
+							font-family: $global-font-regular;
+						}
+
+						&.time-blockEdit {
+							position: relative;
+						}
+					}
+				}
+			}
+		}
+	}
+}

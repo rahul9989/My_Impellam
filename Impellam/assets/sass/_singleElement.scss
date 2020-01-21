@@ -1,0 +1,529 @@
+.dashboard-section {
+	&__right-part {
+		width: auto;
+    	margin-left: 18.5rem;
+    	@include space(padding, top, 2.8rem);
+    	@include flexbox;
+	    flex-wrap: wrap;
+
+	    @include breakpoint(mobile) {
+			margin-left: $zero-size;
+			@include space(padding, top, $size-9);
+		}
+
+		&--singleElement {
+			background-color: $white; 
+			position: relative;
+			@include space(margin, bottom, $size-3);
+			@include space(padding, all, $size-1x5);
+			@include space(padding, bottom, $size-5);
+			min-height: 45rem;
+
+			@include breakpoint(ipad) {
+				width: $full-size;
+			}
+			@include breakpoint(mobile) {
+				@include space(padding, bottom, $size-6);
+			}
+
+			h2 {
+				text-transform: uppercase;
+				@include space(margin, bottom, $size-0x5);
+				@include font-size($large);
+				font-family: $global-font-regular;
+				color: $dark-gray;
+			}
+
+			p {
+				@include font-size($normal);
+				@include space(margin, bottom, $size-2);
+				color: lighten($dark-gray, 43%);
+				font-family: arial;
+			}
+
+			.modify-icon {
+				@include absolute($size-1x5, auto, auto, $zero-size);
+				color: $dusty-gray;
+				@include font-size($large);
+				cursor: pointer;
+				text-align: center;
+				width: $size-4;
+			}
+
+			.modify-block {
+				@include space(padding, all, $size-1);
+				@include space(padding, left, $size-1x5);
+				background-color: $sky-blue;
+				@include absolute($size-1x5, auto, auto, $size-1x5);
+				display: none;
+				z-index: 9;
+
+				&__close {
+					display: inline-block;
+					background-image: url(../img/sprite.png);
+					background-repeat: no-repeat;
+					background-position: -76px -1236px;
+					height: $size-1x5;
+					width: $size-1x5;
+					float: right;
+					//@include space(margin, bottom, $size-1);
+					cursor: pointer;
+				}
+
+				&__edit-block {
+				    clear: both;
+				    display: inline-block;
+					&--edit {
+					    background-position: -76px -1346px;
+					}
+					&--delete {
+					    background-position: -76px -1469px;
+					}
+
+					li {
+						color: $dark-gray;
+						font-family: arial;
+						@include font-size(13);
+						@include space(padding, left, $size-2x5);
+						@include space(padding, right, $size-2);
+						@include space(padding, bottom, $size-1);
+						background-image: url(../img/sprite.png);
+						background-repeat: no-repeat;
+						cursor: pointer;
+						&:last-child {
+							@include space(padding, bottom, $size-0x5);
+					 	}
+					}
+				}
+			}
+
+			@include breakpoint(mobile) {
+				> p {
+					@include space(margin, top, $size-2);
+				}
+			}
+
+			&:last-child {
+				> p {
+					text-align: left;
+				}
+			}
+
+			.ElementDetail {
+				@include flexbox;
+				align-items: center;
+				@include breakpoint(desktop) {
+					display: block;
+				}
+				@include breakpoint(mobile) {
+					display: block;
+				}
+				&__pic-section {
+					@include flexbox;
+					width: $half-size;
+					@include breakpoint(desktop) {
+						justify-content: space-around;
+						width: $full-size;
+						@include space(margin, bottom, $size-3x5);
+					}
+					@include breakpoint(ipad) {
+						@include space(margin, bottom, $size-2);
+					}
+					text-align: center;
+					&--approvedSheet {
+						@include space(padding, all, $size-0x5);
+						span {
+							display: block;
+							@include font-size($xs-large);
+							color: $white;
+							background-color: $orange;
+							@include border-radius($half-size);
+							height: $size-10;
+							width: $size-10;
+							@include flexbox;
+							align-items: center;
+    						justify-content: center;
+    						margin: 0 auto;
+						}
+					}
+					&--approvedShift {
+						@include space(padding, all, $size-0x5);
+						span {
+							display: block;
+							@include font-size($xs-large);
+							color: $white;
+							background-color: $lime;
+							@include border-radius($half-size);
+							height: $size-10;
+							width: $size-10;
+							@include flexbox;
+							align-items: center;
+    						justify-content: center;
+    						margin: 0 auto;
+						}
+					}
+					&--chart {
+						margin: 0 auto;
+						width: $full-size;
+						p {
+							@include font-size($xxx-large);
+							text-align: left;
+							font-family: $global-font;
+							strong {
+								@include font-size(36);
+								@include line-height(42);
+								font-weight: bold;
+								display: block;
+								color: $light-blue;
+							}
+							@include breakpoint(desktop) {
+								@include space(margin, bottom, $zero-size);
+								@include space(margin, top, $size-1x5);
+							}
+						}
+					}
+				}
+				&__content-section {
+					@include space(padding, left, $size-1);
+					width: $half-size;
+					@include breakpoint(desktop) {
+						width: $full-size;
+					}
+					h3 {
+						@include space(padding, left, $size-1x5);
+					}
+					@include breakpoint(desktop) {
+						@include space(padding, left, $zero-size);
+						h3 {
+							@include space(padding, left, $zero-size);
+						}
+						border-top: 1px solid $border-gray;
+						@include space(padding, top, $size-2);
+						
+					}
+					ul {
+						border-left: 1px solid $border-gray;
+						@include space(padding, left, $size-1x5);
+						@include breakpoint(mobile) {
+							border-left: none;
+							@include space(padding, left, $zero-size);
+						}
+						li {
+							@include space(padding, left, $size-1x5);
+							@include space(padding, bottom, $size-0x5);
+						    font-family: arial;
+							position: relative;
+							@include font-size(15);
+							span {
+								display: block;
+								color: $dusty-gray;
+								@include font-size($small);
+								font-family: arial;
+							}
+
+							&:before {
+								content: '';
+								@include absolute(9px, 0, auto, auto);
+								width: $size-0x5;
+								height: $size-0x5;
+								@include border-radius($half-size);
+								background-color: $light-blue;
+							}
+						}
+
+						&.month-with-PDF {
+							li {
+							    clear: both;
+							    border-top: 1px solid lighten($gray, 70%);
+							    @include space(padding, top, $size-1x5);
+							    @include space(padding, bottom, $size-2x5);
+							    @include space(padding, right, $size-2x5);
+							    @include space(padding, left, $size-1);
+							    color: $scorpion;
+								span {
+									display: inline-block;
+								    float: right;
+								}
+								&:before {
+									content: none;
+								}
+							}
+						}
+					}
+
+					label {
+						@include font-size($normal);
+						font-family: $global-font-regular;
+						color: $light-blue;
+					}
+
+					p {
+						&.address {
+							@include font-size(15);
+						}
+					}
+
+					.address-block {
+						border-left: 1px solid $border-gray;
+						@include space(margin, top, $size-4);
+						@include space(padding, left, $size-1x5);
+						@include breakpoint(desktop) {
+							@include space(margin, top, $size-2);
+							@include space(padding, left, $zero-size);
+							border-left: 0;
+						}
+						@include breakpoint(mobile) {
+							@include space(margin, top, $zero-size);
+						}
+						
+						.address-name {
+							@include space(padding, bottom, $size-4);
+							p {
+								@include font-size($xxxx-large);
+								@include line-height($xs-large);
+								font-family: $global-font-regular;
+								@include space(margin, bottom, $zero-size);
+							}
+							@include breakpoint(mobile) {
+								@include space(padding, bottom, $size-3);
+							}
+						}
+
+						p {
+							@include breakpoint(mobile) {
+								@include space(margin, bottom, $size-1);
+								&:last-child {
+									@include space(margin, bottom, $zero-size);
+								}
+							}
+						}
+					}
+
+					
+				}
+
+				&__table2 {
+					table {
+						tr {
+							td {
+								font-family: $global-font-regular;
+								border-top: 0;
+								text-transform: uppercase;
+								@include font-size($large);
+								@include space(padding, top, $size-0x5);
+								@include space(padding, bottom, $size-0x5);
+								@include space(padding, left, $size-1);
+								@include space(padding, right, $size-1);
+
+								@include breakpoint(small) {
+									&:before {
+										content: none;
+									}
+									display: table-cell;
+									@include space(padding, left, $zero-size);
+									@include space(padding, right, $zero-size);
+									@include font-size($normal);
+								}
+								a {
+									&.avlUser {
+										&:before {
+											@include absolute(1.1rem, $size-0x5, auto, auto);
+										}
+										
+									}
+
+									&.nonavlUser {
+										&:before {
+											@include absolute(1.1rem, $size-0x5, auto, auto);
+										}
+									}
+
+									&.constUser {
+										&:before {
+											@include absolute(1.1rem, $size-0x5, auto, auto);
+										}
+									}
+								}
+
+								@include breakpoint(small) {
+									&:last-child {
+										border-bottom: none;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				&__table3 {
+					table {
+						tr {
+							td {
+								a {
+									@include space(padding, left, $zero-size);
+									@include breakpoint(small) {
+										display: initial;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.headeNav__selectpicker {
+			@include space(margin, bottom, $size-1x5);
+			@include space(margin, left, $zero-size);
+			@include space(margin, right, $zero-size);
+			width: 20rem;
+		    float: right;
+			position: initial;
+			.bootstrap-select {
+				.dropdown-toggle {
+					height: 3.5rem;
+					@include space(padding, top, .8rem);
+					@include space(padding, bottom, .8rem);
+					background-color: $silver-chalice !important;
+				}
+				&.btn-group {
+					.dropdown-menu {
+						max-width: 20rem;
+
+						> li {
+							> a {
+								padding: 3px 10px;
+							}
+						}
+					}
+					.dropdown-toggle {
+						.filter-option {
+							overflow: visible;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.ElementDetail__table {
+	width: $full-size;
+		table {
+			width: $full-size;
+			font-family: arial;
+			@include font-size(15);
+			tr {
+				th {
+					font-family: $global-font-regular; 
+					color: $light-blue;
+					@include space(padding, bottom, $size-0x5);
+					@include space(padding, left, $size-1);
+					@include space(padding, right, $size-1);
+					line-height: normal;
+
+					@include breakpoint(small) {
+						display: none;
+					}
+				}
+				td {
+					font-family: arial;
+					border-top: 1px solid lighten($gray, 70%);
+					@include space(padding, top, $size-2x5);
+					@include space(padding, bottom, $size-2x5);
+					@include space(padding, left, $size-1);
+					@include space(padding, right, $size-1);
+					color: $scorpion;
+					line-height: normal;
+				    text-align: left;
+				    position: relative;
+
+					a {
+						&.avlUser, &.nonavlUser, &.constUser {
+							@include breakpoint(small) {
+								@include space(padding, left, $size-2);
+							}
+						}
+						&.avlUser {
+							&:before {
+								content: '';
+								width: $size-1;
+								height: $size-1;
+								background-color: $lime;
+								display: inline-block;
+								border-radius: 50%;
+								@include absolute(2.8rem, $size-0x5, auto, auto);
+								@include breakpoint(small) {
+									@include absolute(2.1rem, $size-11x5, auto, auto);
+								}
+							}
+							
+						}
+						&.nonavlUser {
+							&:before {
+								content: '';
+								width: $size-1;
+								height: $size-1;
+								background-color: $mazenta;
+								display: inline-block;
+								border-radius: 50%;
+								@include absolute(2.8rem, $size-0x5, auto, auto);
+								@include breakpoint(small) {
+									@include absolute(2.1rem, $size-11x5, auto, auto);
+								}
+							}
+						}
+
+						&.constUser {
+							&:before {
+								content: '';
+								width: $size-1;
+								height: $size-1;
+								background-color: $navy-blue;
+								display: inline-block;
+								border-radius: 50%;
+								@include absolute(2.8rem, $size-0x5, auto, auto);
+								@include breakpoint(small) {
+									@include absolute(2.1rem, $size-11x5, auto, auto);
+								}
+							}
+						}
+						color: $scorpion !important;
+						text-decoration: none !important;
+						font-family: arial;
+						display: block;
+						@include space(padding, left, $size-1);
+						@include breakpoint(small) {
+							display: initial;
+							@include space(padding, left, $size-0x5);
+						}
+
+						&:hover {
+							color: $light-blue !important;
+						}
+					}
+
+					@include breakpoint(small) {
+						&:before {
+							content: attr(data-th)" : ";
+							font-family: $global-font-regular;
+							color: $light-blue;
+							display: inline-block;
+    						min-width: $size-12;
+						}
+						display: block;
+						@include space(padding, top, $size-1x5);
+						@include space(padding, bottom, $zero-size);
+						@include space(padding, left, $zero-size);
+						@include space(padding, right, $zero-size);
+						border-top: none;
+
+						&:last-child {
+							border-bottom: 1px solid lighten($gray, 70%);
+							@include space(padding, bottom, $size-1x5);
+						}
+					}
+				}
+			}
+		}
+}

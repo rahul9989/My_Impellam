@@ -1,0 +1,220 @@
+.dataTables_wrapper {
+
+	//@include space(margin, top, $medium);
+
+	.dataTables_paginate {
+		.paginate_button {
+			background: transparent;
+			padding: 0 !important;
+			border: 0 !important;
+			display: inline-block;
+			&.active {
+				a {
+					color: $white;
+					background: $light-blue;
+				}
+			}
+			a {
+			 	color: $dim-gray;
+			 	@include font-size($small);
+			 	@include space(padding, top, $size-0x5);
+			 	@include space(padding, bottom, $size-0x5);
+			 	@include space(padding, left, 1.2rem);
+			 	@include space(padding, right, 1.2rem);
+			 	@include border(1px, solid, $border-gray-light);
+			 	background: $white;
+			 	@include space(margin, left, $size-1);
+			 	text-decoration: none;
+			}
+			&:hover {
+				background: transparent;
+			}
+		}
+	}
+	
+	//.dataTables_length, {
+		//display: none;
+	//}
+
+	.dataTables_length {
+		display: none;
+		@include absolute(-$size-5, auto, auto, -96%);
+		@include font-size(20);
+		@include breakpoint(mobile) {
+			@include absolute(-$size-5, auto, auto, 5%);
+		}
+		
+		select {
+			@include space(padding, all, 0);
+			@include font-size($normal);
+    		box-shadow: none;
+    		background: transparent;
+    		width: auto;
+    		display: inline-block;
+		}
+	}
+
+	.dataTables_filter {
+		display: none;
+	}
+
+	.dataTables_info {
+		position: absolute;
+		top: -$size-4x5;
+		right: $zero-size;
+		@include font-size($normal);
+		font-family: arial;
+	}
+
+	.dataTables_paginate {
+		@include absolute($size-1x5, auto, auto, $size-1x5);
+	}
+
+	table {
+		&.dataTable {
+			thead {
+				th {
+					@include border('bottom', 0);
+				    //min-width: 12.5rem;
+				}
+			}
+			&.no-footer {
+				@include border('bottom', 0);
+			}
+		} 
+		
+		thead {
+			//background: $table-header;
+
+			th {
+				@include font-size(16);
+				color: $dim-gray;
+				font-family: $global-font-regular !important;
+				font-weight: normal !important;
+				padding: $size-3 $size-2 $size-2 !important;
+				vertical-align: middle;
+				text-align: left;
+				outline: $zero-size;
+				border-bottom: 1px solid $border-gray-light !important;
+
+				@include breakpoint(mobile) {
+					padding: $size-3 $size-1 $size-2 !important;
+				}
+				
+				&:after {
+					bottom: 32% !important;
+    				right: $size-1x5 !important;
+    				content: none !important;
+				}
+
+				&:nth-child(-n+4) {
+					&:after {
+						content: "\e150" !important;
+					}
+				}
+			}
+		}
+
+		tbody {
+			tr {
+				&:last-child {
+					td {
+						border-bottom: none;
+					}
+				}
+				td {
+					@include space(padding, bottom, $size-2);
+					@include space(padding, top, $size-2);
+					@include space(padding, left, $size-2);
+					@include space(padding, right, $size-2);
+					@include font-size(16);
+					font-family: arial !important;
+					vertical-align: middle;
+					outline: $zero-size;
+					color: $dusty-gray;
+					//min-width: 12.5rem;
+					border-bottom: 1px solid $porcelain;
+					@include breakpoint(mobile) {
+						@include space(padding, left, $size-1);
+						@include space(padding, right, $size-1);
+					}
+					&:last-child {
+						width: $size-10;
+					}
+
+					a {
+						text-decoration: underline;
+					}
+
+					.nice-select {
+						@include space(margin, bottom, 0);
+					}
+
+					&:first-child {
+						color: $dim-gray;
+					}
+
+					.show-details, .show-files {
+						text-indent: -9999rem;
+						display: block;
+						cursor: pointer;
+					}
+
+					&:before {
+					    top: 40% !important;
+					    border-radius: 0 !important;
+    					box-shadow: none !important;
+					    line-height: 17px !important;
+				        background-color: $nobel !important;
+			            left: 7px !important;
+					    height: 17px !important;
+					    width: 17px !important;
+					    border: 1px solid darken($nobel, 10%) !important;
+					    line-height: 17px !important;
+					}
+				}
+			}
+		}
+	}
+
+	.col-sm-5 {
+		position: initial;
+	}
+}
+
+.dataTables_paginate {
+	margin-bottom: 1.875rem !important;
+
+	//@media (max-width: $mobile-width) {
+		//margin-bottom: 0 !important;
+	//}
+}
+
+table {
+	&.dataTable {
+		margin: $zero-size !important;
+		&.no-footer {
+			border-bottom: none !important;
+		}
+	}
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details {
+	width: 100%;
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details>li:first-child {
+	padding-top: 0.5em !important;
+}
+
+@include breakpoint(mobile) {
+	table.dataTable>tbody>tr.child ul.dtr-details>li {
+		display: flex;
+	    justify-content: space-between;
+	}
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child {
+	padding-left: 35px;
+}
+

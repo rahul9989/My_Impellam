@@ -1,0 +1,14 @@
+.rating {
+	.glyphicon-star {
+		cursor: pointer;
+		color: $dusty-gray;
+		
+		&.active {
+			color: $casablanca;
+		}
+
+		&:before {
+		    content: "\e006";
+		}
+	}
+}

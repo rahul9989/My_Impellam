@@ -1,0 +1,183 @@
+.custom-accordian {
+	border: 1px solid $border-gray-light;
+	.ElementDetail__table {
+		@include breakpoint(small) {
+			@include space(padding, top, $size-1);
+			border-bottom: 1px solid lighten($gray, 70%);
+		}
+		table {
+			thead {
+				tr {
+					th {
+						color: $dim-gray;
+						@include space(padding, top, $size-3x5);
+						@include space(padding, bottom, $size-1x5);
+						width: 13%;
+						vertical-align: middle;
+						@include breakpoint(small) {
+							width: $full-size;
+						}
+						&:first-child {
+							width: 21%;
+							@include space(padding, left, $size-6);
+							@include breakpoint(small) {
+								width: $full-size;
+
+							}
+						}
+						&:last-child {
+							text-align: center;
+							width: 27%;
+							@include breakpoint(small) {
+								text-align: left;
+								width: $full-size;
+							}
+						}
+					}
+				}
+			}
+			tbody {
+				tr {
+					td {
+						width: 13%;
+						vertical-align: middle;
+						position: relative;
+						@include space(padding, top, $size-1);
+						@include space(padding, bottom, $size-1);
+						@include breakpoint(small) {
+							width: $full-size;
+							@include space(padding, left, $size-3);
+
+							&:before {
+								color: $dim-gray;
+							}
+						}
+						&:first-child {
+							width: 21%;
+							@include space(padding, left, $size-6);
+							@include breakpoint(small) {
+								width: $full-size;
+								@include space(padding, left, $size-3);
+							}
+						}
+						&:last-child {
+							text-align: center;
+							width: 27%;
+							@include breakpoint(small) {
+								text-align: left;
+								width: $full-size;
+								border-bottom: none;
+							}
+						}
+
+						a {
+							display: inline-block;
+							@include space(padding, left, $zero-size);
+
+							.glyphicon {
+								position: absolute;
+								top: 40%;
+								left: $size-2x5;
+								@include breakpoint(small) {
+									left: $size-1;
+								}
+								color: $light-blue;
+								width: $size-3;
+
+								&.glyphicon-menu-right {
+									&:before {
+										content: "\e259";
+									}
+								}
+							}
+
+							&.collapsed {
+								.glyphicon {
+									&.glyphicon-menu-right {
+										&:before {
+											content: "\e258";
+										}
+									}
+								}
+							}
+						}
+
+						.accept {
+							@media(min-width: 768px) and (max-width: 969px) {
+								@include space(margin, bottom, $size-1);
+							}
+							@include breakpoint(mobile) {
+								@include space(margin, bottom, $size-1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.panel-default {
+		@include breakpoint(small) {
+			&:first-child {
+				display: none;
+			}
+		}
+		margin-top: 0 !important;
+		border: none;
+		.panel-collapse {
+			.panel-body {
+				.searchDetail-section {
+					@include breakpoint(ipad) {
+						overflow: auto;
+					}
+
+					@include breakpoint(mobile) {
+						@include space(margin, top, $zero-size);
+					}
+					.searchDetail_table {
+						width: $full-size !important;
+						thead {
+							tr {
+								th {
+									&:first-child {
+										width: auto !important;
+									    min-width: $size-11;
+									}
+									&:after {
+										right: 0.5rem !important;
+									}
+								}
+							}
+						}
+						tbody {
+							tr {
+								td {
+									width: auto !important;
+								    min-width: $size-11;
+
+								    &:first-child {
+								    	@include space(padding, left, $size-2);
+								    	@include breakpoint(mobile) {
+								    		@include space(padding, left, $size-1);
+								    	}
+								    }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.panel-accepted {
+			background-color: darken($white, 4%);
+		}
+		&.panel-rejected {
+			background-color: darken($white, 4%);
+		}
+	}
+
+	.dataTables_info, .dataTables_paginate {
+		display: none;
+	}
+}

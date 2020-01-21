@@ -1,0 +1,105 @@
+.loginSection {
+	@include flexbox;
+	align-items: center;
+	justify-content: center;
+	@include breakpoint(mobile) {
+		display: block;
+		text-align: center;
+	}
+
+	&__leftPart {
+		width: 65%;
+		@include breakpoint(desktop) {
+			width: 55%;
+		}
+		@include breakpoint(ipad) {
+			width: $half-size;
+			@include space(padding, all, $size-3x5);
+		}
+		@include breakpoint(mobile) {
+			@include space(padding, all, $size-1x5);
+			@include space(padding, top, $size-2);
+			@include space(padding, bottom, $size-2x5);
+			width: $full-size;
+			height: auto;
+		}
+
+		height: $full-size;
+		@include background("../img/login-bg.jpg");
+		@include flexbox;
+		align-items: center;
+		@include space(padding, all, $size-7x5);
+		&--content {
+			width: $full-size;
+			img {
+				@include space(margin, bottom, $size-4);
+				@include breakpoint(mobile) {
+					@include space(margin, bottom, $zero-size);
+				}
+			}
+			
+			p {
+				max-width: 71rem;
+				color: $white;
+			}
+		}
+	}
+
+	&__rightPart {
+		width: 35%;
+		@include breakpoint(desktop) {
+			width: 45%;
+			@include space(padding, all, $size-3x5);
+		}
+		@include breakpoint(ipad) {
+			width: $half-size;
+		}
+		@include breakpoint(mobile) {
+			@include space(padding, left, $size-1x5);
+			@include space(padding, right, $size-1x5);
+			@include space(padding, top, $zero-size);
+			@include space(padding, bottom, $size-1x5);
+			width: $full-size;
+			height: auto;
+		}
+		@include breakpoint(loginRightBreakup) {
+		    height: calc(100vh - 30rem);
+		}
+		@media (max-width: 359px) {
+			height: calc(100vh - 20rem);
+		}
+		height: $full-size;
+		@include space(padding, all, $size-7x5);
+		@include flexbox;
+		align-items: center;
+		background-color: $white;
+
+		&--content {
+			width: $full-size;
+			max-width: 45rem;
+			@include breakpoint(mobile) {
+				width: $full-size;
+				max-width: $full-size
+			}
+		}
+
+		&--forgetPassword {
+			float: right;
+			@include space(margin, top, $size-3);
+			@include font-size($small);
+			color: $scorpion !important;
+			font-family: $global-font-regular;
+
+			&:hover, &:focus {
+				text-decoration: none;
+			}
+		}
+
+		h1 {
+			@include breakpoint(mobile) {
+				text-align: left;
+				@include space(padding, top, $size-2);
+			}
+		}
+	}
+}
